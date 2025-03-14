@@ -1,6 +1,7 @@
 <?php
 // Get the group field
 $header_group = get_field('header_group');
+var_dump($header_group);
 
 if ($header_group) {
     // Get the 'logo' field inside the group
