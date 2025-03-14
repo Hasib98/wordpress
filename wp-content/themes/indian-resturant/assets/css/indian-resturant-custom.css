@@ -1,0 +1,530 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&family=Jomhuria&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Satisfy&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&family=Jomhuria&family=Lora:ital,wght@0,400..700;1,400..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Satisfy&display=swap');
+
+
+/* *,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+
+html {
+    -moz-text-size-adjust: none;
+    -webkit-text-size-adjust: none;
+    text-size-adjust: none;
+}
+
+
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+    margin-block-end: 0;
+}
+
+
+ul[role='list'],
+ol[role='list'] {
+    list-style: none;
+}
+
+
+body {
+    min-height: 100vh;
+    line-height: 1.5;
+}
+
+
+h1,
+h2,
+h3,
+h4,
+button,
+input,
+label {
+    line-height: 1.1;
+}
+
+
+h1,
+h2,
+h3,
+h4 {
+    text-wrap: balance;
+}
+
+
+a:not([class]) {
+    text-decoration-skip-ink: auto;
+    color: currentColor;
+}
+
+
+img,
+picture {
+    max-width: 100%;
+    display: block;
+}
+
+
+input,
+button,
+textarea,
+select {
+    font-family: inherit;
+    font-size: inherit;
+}
+
+
+textarea:not([rows]) {
+    min-height: 10em;
+}
+
+
+:target {
+    scroll-margin-block: 5ex;
+}
+ */
+
+
+/* Main CSS */
+
+
+:root {
+    --white_text: #FFFFFF;
+    --black_text: #000000;
+
+
+    --yellow_background: #FBC04E;
+    --green_text: #4BB924;
+    --yellow_text: #FA902B;
+    --grey_text: #404040;
+}
+
+::selection {
+    color: var(--white_text);
+    background: #ffa755;
+}
+
+
+
+
+body {
+    padding: 0;
+    margin: 0;
+    background: #FFFFFF;
+    color: var(--black_text);
+}
+
+p,
+h1 {
+    margin: 0;
+    padding: 0;
+}
+
+
+
+section {
+    width: 100%;
+    /* background: #4b188e; */
+    border-bottom: 1px solid red;
+}
+
+header {
+    background: #010101;
+    width: 100%;
+    height: 76px;
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+
+    width: 1240px;
+    /* background: purple; */
+    padding: 0;
+    margin: 0 auto;
+}
+
+
+button {
+    background: var(--yellow_background);
+    border: none;
+    padding: 14px 28px;
+    border-radius: 32px;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.btn {
+    font-family: 'Cabin', serif;
+    background: var(--yellow_background);
+    border: none;
+    padding: 14px 28px;
+    border-radius: 32px;
+    font-size: 18px;
+    font-weight: 400;
+    text-decoration: none;
+    border: 1px solid var(--yellow_background);
+
+}
+
+.btn:hover {
+    background: #efce8da5;
+    border: 1px solid var(--yellow_background);
+
+}
+
+
+p {
+    font-family: "Cabin", serif;
+    margin-bottom: 0;
+}
+
+
+
+.header_content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: var(--white_text);
+    /* background: #a46464; */
+}
+
+.header_content .logo {
+    font-family: "Jomhuria", serif;
+    font-size: 64px;
+    line-height: 40px;
+    font-style: regular;
+    margin: 0;
+
+
+}
+
+header nav .nav_menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    column-gap: 40px;
+
+
+}
+
+.nav_menu a {
+    text-decoration: none;
+    color: inherit;
+    font-family: "Cabin", sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+
+}
+
+
+.header_buttons {
+    display: flex;
+    column-gap: 24px;
+}
+
+.reserve_table_btn {
+    font-size: 16px;
+}
+
+
+
+
+/* ----------------------------------------
+
+***********hero_section***********
+
+------------------------------------------- */
+
+
+.hero_section {
+    position: relative;
+    height: 646px;
+}
+
+.hero_section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0));
+}
+
+.hero_section .container {
+
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.hero_section .container .contents {
+    width: 100%;
+    transform: translateZ(0);
+}
+
+.hero_section .container .title_group {
+    width: 550px;
+}
+
+.hero_section .container .title_group .pre_title {
+    font-family: "Satisfy", cursive;
+    font-size: 18px;
+    color: var(--yellow_text);
+}
+
+.hero_section .container .title_group .title {
+    font-family: "Playfair Display", serif;
+    font-size: 56px;
+    line-height: 66px;
+    font-weight: 900;
+    color: var(--white_text);
+    margin-bottom: 30px;
+}
+
+.hero_section .container .title_group .description {
+    font-family: "Cabin", sans-serif;
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: 400;
+    color: var(--white_text);
+    margin-bottom: 50px;
+}
+
+.hero_section .container .title_group .search_input {
+    font-family: "Cabin", sans-serif;
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: 400;
+    color: var(--white_text);
+    margin-left: 24px;
+
+
+    background: transparent;
+    border: none;
+    padding: 10px 22px;
+    border-radius: 32px;
+    border: 2px solid white;
+    width: 140px;
+    /* height: 52px; */
+    transition: width 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+.hero_section .container .title_group .search_input::placeholder {
+    color: white;
+}
+
+.hero_section .container .title_group .search_input:focus {
+    /* background-color: yellow; */
+    width: 250px;
+    outline: none;
+    /* Removes default blue focus outline */
+}
+
+.hero_section .container .mouse_icon {
+    /* background: #1a69c5; */
+    display: flex;
+    align-items: center;
+    justify-content: right;
+}
+
+/* ----------------------------------------
+
+***********we_are_indian_section***********
+
+------------------------------------------- */
+
+
+
+.we_are_indian_section {
+    height: 886px;
+}
+
+.we_are_indian_section .container {
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+
+.we_are_indian_section .container .contents {
+    width: 100%;
+}
+
+.we_are_indian_section .container .contents .title_group {
+    width: 608px;
+    margin-bottom: 90px;
+}
+
+.we_are_indian_section .container .contents .title_group .title {
+    font-family: Playfair Display;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 60px;
+
+    color: var(--black_text);
+    margin-bottom: 40px;
+
+
+}
+
+.we_are_indian_section .container .contents .title_group .description {
+    width: 503px;
+    font-family: Cabin;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 36px;
+    color: var(--grey_text);
+    margin-bottom: 40px;
+
+
+}
+
+.we_are_indian_section .customer_review {
+    display: flex;
+    gap: 20px;
+    width: 503px;
+
+}
+
+.we_are_indian_section .customer_review .review_count {
+    display: flex;
+    column-gap: 20px;
+    align-items: center;
+    justify-content: center;
+
+
+    width: fit-content;
+
+}
+
+.we_are_indian_section .customer_review .divider {
+    width: 2px;
+    background: #969696;
+
+
+}
+
+.we_are_indian_section .customer_review .review {
+    display: flex;
+    column-gap: 20px;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+
+}
+
+/* .we_are_indian_section .customer_review .review_count .count {
+    background: #e8e4e4;
+}
+ */
+
+.we_are_indian_section .customer_review .review_count span:first-child {
+    font-family: "Lora", serif;
+    font-size: 40px;
+    color: #010101;
+
+}
+
+.we_are_indian_section .customer_review .review_count span:nth-child(2) {
+    font-family: Playfair Display;
+    font-size: 40px;
+    font-weight: 700;
+    color: #010101;
+
+}
+
+
+
+.we_are_indian_section .customer_review .review_count p {
+    font-family: "Cabin", serif;
+    font-size: 16px;
+    color: var(--grey_text);
+    width: 96px;
+
+}
+
+
+
+.we_are_indian_section .customer_review .review .rounded_avatar {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.we_are_indian_section .customer_review .review .description {
+    color: var(--grey_text);
+    width: 158px;
+}
+
+
+.we_are_indian_section .container .we_are_indian_image {
+    max-height: 646px;
+    min-width: 560px;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+
+
+
+/* ----------------------------------------
+
+***********menu_section***********
+
+------------------------------------------- */
+
+
+
+.menu_section {
+    height: 1274px;
+}
+
+.menu_section .container .list {
+    columns: 565px;
+}
+
+/* .menu_section .container .title_group {
+    width: 565px;
+} */
+
+.menu_section .container .title_group .pre_title {
+    font-family: "Satisfy", serif;
+    font-size: 24px;
+    color: var(--green_text);
+    /* margin-bottom: 16px; */
+    margin: 0;
+    padding: 0;
+}
+
+.menu_section .container .title_group .title {
+    font-family: "Playfair Display", serif;
+    font-size: 50px;
+    line-height: 60px;
+    font-weight: 700;
+    color: var(--black_text);
+    margin-bottom: 30px;
+}
+
+.menu_section img {
+    width: 100%;
+    margin-bottom: 1rem;
+}
