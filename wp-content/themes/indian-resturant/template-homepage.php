@@ -158,10 +158,10 @@ $about_us_section_image = $about_section_group['about_us_section_image'];  // AC
         <div class="title_group">
             <h1>Our Daily Offer</h1>
             <div class="slider_buttons">
-                <div class='slider_button'>
+                <div class='slider_button left'>
                     <div class="left_slider_button"></div>
                 </div>
-                <div class='slider_button'>
+                <div class='slider_button right'>
                     <div class="right_slider_button"></div>
                 </div>
             </div>

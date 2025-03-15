@@ -20,6 +20,13 @@ function indian_resturant_register_style()
         '5,3,3',
         'all'
     );
+    wp_enqueue_style(
+        'swiper-js-style',
+        'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css',
+        array(),
+        '1,0,0',
+        'all'
+    );
 }
 
 add_action('wp_enqueue_scripts', 'indian_resturant_register_style');
@@ -28,6 +35,7 @@ function indian_resturant_register_scripts()
 {
     wp_enqueue_script('jquery');
     wp_enqueue_script('indian-resturant-main', get_template_directory_uri() . '/assets/js/main.js', array(), '1.0.0', true);
+    wp_enqueue_script('swiper-js', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js', array(), '1.0.0', true);
 }
 
 add_action('wp_enqueue_scripts', 'indian_resturant_register_scripts');
