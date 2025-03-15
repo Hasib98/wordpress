@@ -212,6 +212,11 @@ button {
     /* background: #a46464; */
 }
 
+.header_content a {
+    text-decoration: none;
+}
+
+
 .header_content .logo {
     font-family: "Jomhuria", serif;
     color: var(--white_text);
@@ -512,6 +517,12 @@ header nav .nav_menu {
     padding-bottom: 80px;
 }
 
+.menu_section .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
 .menu_section .container .list {
     columns: 365px 2;
     /* background: #5f6de5; */
@@ -570,4 +581,160 @@ header nav .nav_menu {
 
 .menu_section .food_card_container p {
     color: var(--grey-paragraph-text);
+}
+
+.menu_section .container .btn {
+    margin: 0 auto;
+}
+
+
+/* ----------------------------------------
+
+***********daily_offer_section***********
+
+------------------------------------------- */
+
+.daily_offer_section {
+    height: 840px;
+    margin-top: 80px;
+    margin-bottom: 80px;
+}
+
+.daily_offer_section .title_group {
+    display: flex;
+    /* background: purple; */
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 64px;
+}
+
+.daily_offer_section .title_group .slider_buttons {
+    display: flex;
+    gap: 22px;
+}
+
+
+.daily_offer_section .slider_buttons .slider_button {
+    height: 44px;
+    width: 44px;
+    border: 1.5px solid #FBC04E;
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.daily_offer_section .slider_buttons .slider_button:hover {
+    background: #FBC04E;
+    cursor: pointer;
+}
+
+.left_slider_button,
+.right_slider_button {
+    width: 12px;
+    height: 12px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: #FBC04E;
+    display: inline-block;
+}
+
+.left_slider_button {
+    border-top: none;
+    border-right: none;
+    transform: translateX(2px) rotate(45deg);
+}
+
+.right_slider_button {
+    border-bottom: none;
+    border-left: none;
+    transform: translateX(-2px) rotate(45deg);
+}
+
+.daily_offer_section .slider_buttons .slider_button:hover .left_slider_button {
+    border-color: var(--white_text);
+}
+
+.daily_offer_section .slider_buttons .slider_button:hover .right_slider_button {
+    border-color: var(--white_text);
+}
+
+.daily_offer_section .content_group {
+    display: flex;
+    justify-content: space-between;
+}
+
+.daily_offer_section .content_group .image_container img {
+
+    max-height: 556px;
+    min-width: 495px;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+
+.daily_offer_section .content_group .offer_cards_container {
+    width: 713px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.daily_offer_section .offer_cards_container .offer_card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 164px;
+    width: 100%;
+}
+
+.daily_offer_section .offer_card .card_image {
+    height: 100%;
+    width: 164px;
+}
+
+.daily_offer_section .offer_card .card_image img {
+
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+.daily_offer_section .offer_card .text_group {
+    width: 525px;
+    height: 130px;
+
+    display: flex;
+    justify-content: space-between;
+}
+
+.daily_offer_section .text_group .card_title_group {
+    width: 333px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.daily_offer_section .text_group .card_title_group h1 {
+    font-size: 32px;
+    line-height: 46px;
+}
+
+.daily_offer_section .text_group .card_title_group p {
+    font-size: 18px;
+    line-height: 30px;
+    color: var(--grey-paragraph-text);
+}
+
+.daily_offer_section .text_group .price {
+    font-family: Cabin;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 46px;
+
 }

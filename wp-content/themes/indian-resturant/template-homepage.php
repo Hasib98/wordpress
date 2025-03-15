@@ -144,7 +144,73 @@ $about_us_section_image = $about_section_group['about_us_section_image'];  // AC
             ?>
 
         </div>
+        <a href="<?php echo esc_url($see_menu_button['url']); ?>" class="btn">
+            <?php echo esc_html($see_menu_button['title'] ?? 'See Menu'); ?></a>
+
+
     </div>
+</section>
+
+
+<!-- ----------Daily Offer----------- -->
+<section class='daily_offer_section'>
+    <div class="container">
+        <div class="title_group">
+            <h1>Our Daily Offer</h1>
+            <div class="slider_buttons">
+                <div class='slider_button'>
+                    <div class="left_slider_button"></div>
+                </div>
+                <div class='slider_button'>
+                    <div class="right_slider_button"></div>
+                </div>
+            </div>
+        </div>
+        <div class="content_group">
+            <div class="image_container">
+                <img src="<?php echo get_template_directory_uri() . '/assets/images/offer.png'; ?>" alt="">
+            </div>
+            <div class="offer_cards_container">
+                <div class="offer_card">
+                    <div class="card_image">
+                        <img src="<?php echo get_template_directory_uri() . '/assets/images/test_2.jpg'; ?>" alt="">
+                    </div>
+                    <div class="text_group">
+                        <div class="card_title_group">
+                            <h1>Spicy Club</h1>
+                            <p>In publishing and graphic design, Lorem ipsum is a placeholder text commonly used.</p>
+                        </div>
+                        <div class=" price">₹ 299</div>
+                    </div>
+                </div>
+                <div class="offer_card">
+                    <div class="card_image">
+                        <img src="<?php echo get_template_directory_uri() . '/assets/images/test_2.jpg'; ?>" alt="">
+                    </div>
+                    <div class="text_group">
+                        <div class="card_title_group">
+                            <h1>Spicy Club</h1>
+                            <p>In publishing and graphic design, Lorem ipsum is a placeholder text commonly used.</p>
+                        </div>
+                        <div class=" price">₹ 299</div>
+                    </div>
+                </div>
+                <div class="offer_card">
+                    <div class="card_image">
+                        <img src="<?php echo get_template_directory_uri() . '/assets/images/test_2.jpg'; ?>" alt="">
+                    </div>
+                    <div class="text_group">
+                        <div class="card_title_group">
+                            <h1>Spicy Club</h1>
+                            <p>In publishing and graphic design, Lorem ipsum is a placeholder text commonly used.</p>
+                        </div>
+                        <div class=" price">₹ 299</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
 </section>
 
 
