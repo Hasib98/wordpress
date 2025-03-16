@@ -24,17 +24,17 @@ document.addEventListener("DOMContentLoaded", function () {
         },
     });
 });
-document.addEventListener("DOMContentLoaded", function () {
-    new Swiper(".menuSwiper", {
-        slidesPerView: 3,
-        spaceBetween: 30,
-        freeMode: true,
-        pagination: {
-            el: ".swiper-pagination",
-            clickable: true,
-        },
-    });
-});
+// document.addEventListener("DOMContentLoaded", function () {
+//     new Swiper(".menuSwiper", {
+//         slidesPerView: 3,
+//         spaceBetween: 30,
+//         freeMode: true,
+//         pagination: {
+//             el: ".swiper-pagination",
+//             clickable: true,
+//         },
+//     });
+// });
 
 
 
