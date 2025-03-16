@@ -1,7 +1,6 @@
 <?php
 // Get the group field
-$header_group = get_field('header_group','options');
-
+$header_group = get_field('header_group', 'options');
 
 if ($header_group) {
     // Get the 'logo' field inside the group
@@ -35,9 +34,7 @@ if ($header_group) {
             <!-- Logo Section -->
             <div class="header_content">
 
-                <a href="<?php
-                    echo home_url(  );
-                ?> ">
+                <a href="<?php echo home_url(); ?> ">
                     <h1 class=" logo"> <?php echo $logo_text; ?></h1>
                 </a>
                 <!-- <h1 class=" logo"> <?php echo $logo_text; ?></h1> -->

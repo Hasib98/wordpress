@@ -1,0 +1,655 @@
+/* Reset */
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Prevent font size inflation */
+html {
+    -moz-text-size-adjust: none;
+    -webkit-text-size-adjust: none;
+    text-size-adjust: none;
+}
+
+/* Remove default margin in favour of better control in authored CSS */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+    margin-block-end: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+    list-style: none;
+}
+
+/* Set core body defaults */
+body {
+    min-height: 100vh;
+    line-height: 1.5;
+}
+
+/* Set shorter line heights on headings and interactive elements */
+h1,
+h2,
+h3,
+h4,
+button,
+input,
+label {
+    line-height: 1.1;
+}
+
+/* Balance text wrapping on headings */
+h1,
+h2,
+h3,
+h4 {
+    text-wrap: balance;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+    text-decoration-skip-ink: auto;
+    color: currentColor;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+    max-width: 100%;
+    display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+    font-family: inherit;
+    font-size: inherit;
+}
+
+/* Make sure textareas without a rows attribute are not tiny */
+textarea:not([rows]) {
+    min-height: 10em;
+}
+
+/* Anything that has been anchored to should have extra scroll margin */
+:target {
+    scroll-margin-block: 5ex;
+}
+
+
+:root {
+    --primary-color: #0e9209;
+    --secondary-color: #222;
+    --text-color: white;
+    --btn-padding: 10px 20px;
+}
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+
+/* Navigation */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--primary-color);
+    padding: 15px 50px;
+    color: white;
+}
+
+/* .logo {
+    font-size: 24px;
+    font-weight: bold;
+} */
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+}
+
+.cart {
+    font-weight: bold;
+}
+
+/* Hero Section */
+.hero {
+    /* background: url('../images/hero-food.jpg') center/cover no-repeat; */
+    height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    position: relative;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+.hero h1 {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 18px;
+}
+
+.hero-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #0073e6;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    margin-top: 15px;
+}
+
+.hero-button:hover {
+    background: #005bb5;
+}
+
+.btn {
+    display: inline-block;
+    /* background: white; */
+    color: white;
+    /* color: var(--primary-color); */
+    padding: 10px 20px;
+    margin-top: 10px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    /* border: 1px solid var(--primary-color); */
+    border: 2px solid white;
+}
+
+/* Food Cards Section */
+.food-items {
+    text-align: center;
+    padding: 50px;
+}
+
+.food-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    justify-content: center;
+}
+
+.food-card {
+    background: white;
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    text-align: center;
+}
+
+.food-card .limited-text {
+    display: -webkit-box;
+    --webkit-line-clamp: 1;
+    /* Limits to 1 line */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    /* Ensures text stays in one line */
+    max-width: 100%;
+    /* Adjust width as needed */
+}
+
+.food-card a {
+    text-decoration: none;
+    color: var(--secondary-color);
+}
+
+.food-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.food-card h3 {
+    margin: 10px 0;
+}
+
+.food-card .posted_by {
+    color: var(--primary-color);
+}
+
+.food-card p {
+    font-size: 18px;
+}
+
+.food-card button {
+    background: var(--primary-color);
+    color: white;
+    padding: 8px 15px;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+
+.food-card button:hover {
+    background: #054703;
+}
+
+
+single-food-item {
+    max-width: 800px;
+    background: #fff;
+    margin: 50px auto;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Title */
+.single-food-item h1 {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #2c3e50;
+}
+
+/* Product Image */
+.single-food-item img {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+/* Description */
+.single-food-item p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+/* Price Section */
+.single-food-item p strong {
+    /* font-weight: bold; */
+    color: #27ae60;
+}
+
+.single-food-item p:nth-child(4) strong {
+    color: #e74c3c;
+}
+
+/* Discounted Price */
+.single-food-item p:nth-child(5) {
+    font-size: 18px;
+    color: #e74c3c;
+    font-weight: bold;
+}
+
+/* Quantity */
+.single-food-item p:nth-child(6) {
+    font-size: 16px;
+    font-weight: 500;
+    color: #555;
+}
+
+/* Category */
+.single-food-item p:nth-child(7) {
+    font-size: 16px;
+    color: #007bff;
+    font-weight: 500;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .single-food-item {
+        max-width: 90%;
+        padding: 15px;
+    }
+
+    .single-food-item h1 {
+        font-size: 24px;
+    }
+
+    .single-food-item p {
+        font-size: 14px;
+    }
+}
+
+
+
+/* csss
+
+
+*/
+
+.food-cart {
+    background: #f7f7f7;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 300px;
+}
+
+.food-cart h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+#cart-items {
+    margin-bottom: 20px;
+}
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.cart-item img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.cart-item p {
+    flex: 1;
+}
+
+.item-quantity {
+    width: 50px;
+    padding: 5px;
+    margin-left: 10px;
+}
+
+.remove-item {
+    background: rgb(235, 122, 122);
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.remove-item:hover {
+    background: rgb(212, 50, 50);
+}
+
+.cart-total {
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+#checkout {
+    background: var(--primary-color);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 100%;
+    font-size: 16px;
+}
+
+#checkout:disabled {
+    background: gray;
+    cursor: not-allowed;
+}
+
+
+
+
+.form-section .form-card {
+    /* display: none; */
+    background: transparent;
+    width: 600px;
+    margin: auto;
+    position: relative;
+    top: 50px;
+    padding: 35px;
+
+}
+
+.form-section .form-card h1 {
+
+    text-align: center;
+    font-weight: bold;
+    color: var(--primary-color);
+    /* background: #000; */
+    margin-bottom: 25px;
+}
+
+.form-section .form-card p {
+
+    margin-top: 15px;
+}
+
+.form-section .form-card p span a {
+
+
+    text-decoration: none;
+    color: #3232c0;
+}
+
+.form-section .form-card form button {
+
+
+    background: var(--primary-color);
+    /* background: #000; */
+}
+
+.form-section .form-card .form {
+    /* background: #a28989; */
+    /* background: transparent; */
+    font-size: larger;
+    border: none;
+    display: flex;
+    gap: 15px;
+
+}
+
+.form-section .form-card .form input {
+    background: transparent;
+
+}
+
+.form-check-input:focus {
+    border-color: #8efe86;
+    outline: 0;
+    box-shadow: 0 0 0 0.25rem rgba(57, 253, 13, 0.25);
+}
+
+.form-check-input:checked {
+    background-color: var(--primary-color);
+
+    border-color: var(--primary-color);
+}
+
+
+.dashboard-info {
+    padding: 10px;
+
+    display: flex;
+    justify-content: space-between;
+
+
+
+}
+
+.dashboard-info .add-food {
+    background: var(--primary-color);
+    color: white;
+    padding: 8px 15px;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+    border-radius: 5px;
+
+}
+
+header nav ul {
+    display: flex;
+    align-items: center;
+}
+
+header nav ul img {
+    border-radius: 50%;
+    height: 30px;
+}
+
+
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown_content {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: #95f591;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    border-radius: 8px;
+    border: 2px solid #0d9488;
+    list-style: none;
+    padding: 10px;
+}
+
+.dropdown:hover {
+    cursor: pointer;
+}
+
+.dropdown:hover .dropdown_content {
+    display: block;
+}
+
+.dropdown_content ul {
+    padding: 0;
+    margin: 0;
+
+}
+
+.dropdown_content li {
+    padding: 0;
+    margin: 0;
+
+
+
+
+}
+
+.dropdown_content li a {
+    color: #0d9488;
+    text-decoration: none;
+    /* Optional: Removes underline */
+    display: block;
+    /* Ensures full clickable area */
+    padding: 8px 12px;
+    /* Adds spacing for better UX */
+}
+
+
+
+
+
+
+
+
+.dropdown_content li :hover {
+
+
+    background-color: #8fbe42;
+    color: white;
+    border-radius: 5px;
+
+}
+
+
+
+.single_post {
+    margin: 50px;
+    border: 1px solid grey;
+    padding: 10px 30px;
+    border-radius: 26px;
+
+}
+
+
+
+.single_post img {
+    border-radius: 26px;
+
+
+}
+
+footer {
+    background: var(--primary-color);
+    padding: 10px;
+}
+
+footer .logo {
+    border-radius: 50%;
+    width: 100px;
+}
+
+footer div ul {
+    list-style: none;
+}
+
+.footer_list_group {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}

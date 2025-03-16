@@ -7,7 +7,10 @@ function indian_resturant_register_style()
         'indian-resturant-style',
         $indian_resturant_custom_css,
         // array(),
-        array('bootstrap-style'),
+        array(
+            'bootstrap-style',
+            'swiper-style'
+        ),
         filemtime(get_template_directory() . '/assets/css/indian-resturant-custom.css'),
         'all'
     );
@@ -21,7 +24,7 @@ function indian_resturant_register_style()
         'all'
     );
     wp_enqueue_style(
-        'swiper-js-style',
+        'swiper-style',
         'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css',
         array(),
         '1,0,0',

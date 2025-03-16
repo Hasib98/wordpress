@@ -112,19 +112,20 @@ $about_us_section_image = $about_section_group['about_us_section_image'];  // AC
 
             <?php
             $food_query = new WP_Query(array(
-                'post_type'      => 'food-item', // Your custom post type
+                'post_type' => 'food-item',  // Your custom post type
                 // 'posts_per_page' => 6, // Adjust number of posts to display
-                'order'          => 'DESC'
+                'order' => 'DESC'
             ));
 
-            if ($food_query->have_posts()) :
-                while ($food_query->have_posts()) : $food_query->the_post();
+            if ($food_query->have_posts()):
+                while ($food_query->have_posts()):
+                    $food_query->the_post();
 
                     // Get ACF fields
                     $food_image = get_field('food_image');
                     $food_title = get_field('food_title');
                     $food_description = get_field('food_description');
-                    $post_link = get_permalink(); // Get the post URL
+                    $post_link = get_permalink();  // Get the post URL
                     ?>
             <a href="<?php echo esc_url($post_link); ?>">
 
@@ -138,8 +139,8 @@ $about_us_section_image = $about_section_group['about_us_section_image'];  // AC
             <?php
                 endwhile;
                 wp_reset_postdata();
-            else :
-                echo "<p>No food items availablee.</p>";
+            else:
+                echo '<p>No food items availablee.</p>';
             endif;
             ?>
 
@@ -158,10 +159,10 @@ $about_us_section_image = $about_section_group['about_us_section_image'];  // AC
         <div class="title_group">
             <h1>Our Daily Offer</h1>
             <div class="slider_buttons">
-                <div class='slider_button left'>
+                <div class='slider_button swiper-btn-prev'>
                     <div class="left_slider_button"></div>
                 </div>
-                <div class='slider_button right'>
+                <div class='slider_button swiper-btn-next'>
                     <div class="right_slider_button"></div>
                 </div>
             </div>
@@ -170,47 +171,93 @@ $about_us_section_image = $about_section_group['about_us_section_image'];  // AC
             <div class="image_container">
                 <img src="<?php echo get_template_directory_uri() . '/assets/images/offer.png'; ?>" alt="">
             </div>
-            <div class="offer_cards_container">
-                <div class="offer_card">
-                    <div class="card_image">
-                        <img src="<?php echo get_template_directory_uri() . '/assets/images/test_2.jpg'; ?>" alt="">
-                    </div>
-                    <div class="text_group">
-                        <div class="card_title_group">
-                            <h1>Spicy Club</h1>
-                            <p>In publishing and graphic design, Lorem ipsum is a placeholder text commonly used.</p>
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="offer_cards_container">
+                            <?php
+                            $offer_card_query = new WP_Query(array(
+                                'post_type' => 'daily-offer-post',  // Your custom post type
+                                // 'posts_per_page' => 6, // Adjust number of posts to display
+                                'order' => 'DESC'
+                            ));
+                            if ($offer_card_query->have_posts()):
+                                while ($offer_card_query->have_posts()):
+                                    $offer_card_query->the_post();
+
+                                    // Get ACF fields
+                                    $offer_food_image = get_field('food_image');
+                                    $offer_food_title = get_field('food_title');
+                                    $offer_food_description = get_field('food_description');
+                                    $offer_food_price = get_field('price');
+                                    $offer_post_link = get_permalink();  // Get the post URL
+                                    ?>
+                            <div class="offer_card">
+                                <div class="card_image">
+                                    <img src="<?php echo esc_url($offer_food_image); ?>" alt="">
+                                </div>
+                                <div class="text_group">
+                                    <div class="card_title_group">
+                                        <h1><?php echo esc_html($offer_food_title); ?></h1>
+                                        <p><?php echo esc_html($offer_food_description); ?></p>
+                                    </div>
+                                    <div class=" price"><?php echo esc_html($offer_food_price); ?></div>
+                                </div>
+                            </div>
+                            <?php
+                                endwhile;
+                                wp_reset_postdata();
+                            else:
+                                echo '<p>No food items availablee.</p>';
+                            endif;
+                            ?>
                         </div>
-                        <div class=" price">₹ 299</div>
-                    </div>
-                </div>
-                <div class="offer_card">
-                    <div class="card_image">
-                        <img src="<?php echo get_template_directory_uri() . '/assets/images/test_2.jpg'; ?>" alt="">
-                    </div>
-                    <div class="text_group">
-                        <div class="card_title_group">
-                            <h1>Spicy Club</h1>
-                            <p>In publishing and graphic design, Lorem ipsum is a placeholder text commonly used.</p>
-                        </div>
-                        <div class=" price">₹ 299</div>
-                    </div>
-                </div>
-                <div class="offer_card">
-                    <div class="card_image">
-                        <img src="<?php echo get_template_directory_uri() . '/assets/images/test_2.jpg'; ?>" alt="">
-                    </div>
-                    <div class="text_group">
-                        <div class="card_title_group">
-                            <h1>Spicy Club</h1>
-                            <p>In publishing and graphic design, Lorem ipsum is a placeholder text commonly used.</p>
-                        </div>
-                        <div class=" price">₹ 299</div>
                     </div>
                 </div>
             </div>
+
+
         </div>
     </div>
 
+</section>
+
+<section class="checkout_menu_section">
+    <div class="container">
+        <h1>Checkout Our Menu</h1>
+        <div class="menu_taxonomy">
+            <?php
+            $terms = get_terms(array(
+                'taxonomy' => 'menu-category',  // Correct slug
+                'hide_empty' => false,  // Show terms even if they have no posts
+            ));
+
+            if (!empty($terms) && !is_wp_error($terms)) {
+                echo '<ul class="menu_taxonomy_list">';
+                foreach ($terms as $term) {
+                    echo '<li><a class="btn" href="' . esc_url(get_term_link($term)) . '">' . esc_html($term->name) . '</a></li>';
+                }
+                echo '</ul>';
+            } else {
+                echo '<p>No categories found.</p>';
+            }
+            ?>
+        </div>
+    </div>
+    <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">Slide 1</div>
+            <div class="swiper-slide">Slide 2</div>
+            <div class="swiper-slide">Slide 3</div>
+            <div class="swiper-slide">Slide 4</div>
+            <div class="swiper-slide">Slide 5</div>
+            <div class="swiper-slide">Slide 6</div>
+            <div class="swiper-slide">Slide 7</div>
+            <div class="swiper-slide">Slide 8</div>
+            <div class="swiper-slide">Slide 9</div>
+        </div>
+        <div class="swiper-pagination"></div>
+    </div>
 </section>
 
 
@@ -222,76 +269,41 @@ get_footer();
 
 
 
-
-<!-- <section class="menu_section">
-    <div class="container">
-        <div class="list">
-            <div class="title_group">
-                <p class="pre_title">A Indian Cuisine Restaurant</p>
-                <h1 class="title">We are the best in this food town for a decade!</h1>
-            </div>
-            <div class="food_card_container">
-                <img src="<?php echo get_template_directory_uri() . '/assets/images/hero_image.png'; ?>" alt="">
-                <h1 class="card_title">Spicy Club</h1>
-                <p class="card_description">In publishing and graphic design, Lorem ipsum is a placeholder text
-                    commonly used Lorem
-                    ipsum
-                    text
-                    only.
-                </p>
-            </div>
-            <div class="food_card_container">
-                <img src="<?php echo get_template_directory_uri() . '/assets/images/test.jpg'; ?>" alt="">
-                <h1 class="card_title">Spicy Club</h1>
-                <p class="card_description">cIn publishing and graphic design, Lorem ipsum is a placeholder text
-                    commonly used Lorem
-                    ipsum
-                    text
-                    only.
-                </p>
-            </div>
-            <div class="food_card_container">
-                <img src="<?php echo get_template_directory_uri() . '/assets/images/test_2.jpg'; ?>" alt="">
-                <h1 class="card_title">Spicy Club</h1>
-                <p class="card_description">cIn publishing and graphic design, Lorem ipsum is a placeholder text
-                    commonly used Lorem
-                    ipsum
-                    text
-                    only.
-                </p>
-            </div>
-
-            <div class="food_card_container">
-                <img src="<?php echo get_template_directory_uri() . '/assets/images/food_2.png'; ?>" alt="">
-                <h1 class="card_title">Spicy Club</h1>
-                <p class="card_description">cIn publishing and graphic design, Lorem ipsum is a placeholder text
-                    commonly used Lorem
-                    ipsum
-                    text
-                    only.
-                </p>
-            </div>
-
-            <div class="food_card_container">
-                <img src="<?php echo get_template_directory_uri() . '/assets/images/food_2.png'; ?>" alt="">
-                <h1 class="card_title">yoo suppp</h1>
-                <p class="card_description">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
-                    ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes,
-                    nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla
-                    consequat massa quis enim.</p>
-            </div>
-            <div class="food_card_container">
-                <img src="<?php echo get_template_directory_uri() . '/assets/images/indian_food_cook.png'; ?>" alt="">
-                <h1 class="card_title">Hehe boiI!!!</h1>
-                <p class="card_description">The European languages are members of the same family. Their separate
-                    existence is a myth. For science, music, sport, etc, Europe uses the same vocabulary.</p>
-            </div>
-
-
-
-
+<!-- <div class="offer_cards_container">
+    <div class="offer_card">
+        <div class="card_image">
+            <img src="<?php echo get_template_directory_uri() . '/assets/images/test_2.jpg'; ?>" alt="">
         </div>
-
+        <div class="text_group">
+            <div class="card_title_group">
+                <h1>Spicy Club</h1>
+                <p>In publishing and graphic design, Lorem ipsum is a placeholder text commonly used.</p>
+            </div>
+            <div class=" price">₹ 299</div>
+        </div>
     </div>
-
-</section> -->
+    <div class="offer_card">
+        <div class="card_image">
+            <img src="<?php echo get_template_directory_uri() . '/assets/images/test_2.jpg'; ?>" alt="">
+        </div>
+        <div class="text_group">
+            <div class="card_title_group">
+                <h1>Spicy Club</h1>
+                <p>In publishing and graphic design, Lorem ipsum is a placeholder text commonly used.</p>
+            </div>
+            <div class=" price">₹ 299</div>
+        </div>
+    </div>
+    <div class="offer_card">
+        <div class="card_image">
+            <img src="<?php echo get_template_directory_uri() . '/assets/images/test_2.jpg'; ?>" alt="">
+        </div>
+        <div class="text_group">
+            <div class="card_title_group">
+                <h1>Spicy Club</h1>
+                <p>In publishing and graphic design, Lorem ipsum is a placeholder text commonly used.</p>
+            </div>
+            <div class=" price">₹ 299</div>
+        </div>
+    </div>
+</div> -->

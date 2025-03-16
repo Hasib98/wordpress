@@ -185,7 +185,7 @@ button {
     font-family: 'Cabin', serif;
     background: var(--yellow_background);
     border: none;
-    padding: 14px 28px;
+    padding: 11px 28px;
     border-radius: 32px;
     font-size: 18px;
     font-weight: 400;
@@ -199,7 +199,6 @@ button {
     border: 1px solid var(--yellow_background);
 
 }
-
 
 
 .header_content {
@@ -736,5 +735,48 @@ header nav .nav_menu {
     font-weight: 700;
     font-size: 32px;
     line-height: 46px;
+}
 
+/* ----------------------------------------
+
+***********Check_Out_Menu***********
+
+------------------------------------------- */
+
+
+
+.checkout_menu_section {
+    margin-top: 80px;
+    margin-bottom: 80px;
+    height: 1191px;
+}
+
+.checkout_menu_section .container h1 {
+
+    font-size: 56px;
+    line-height: 60px;
+    margin-bottom: 64px;
+}
+
+.checkout_menu_section .container h1 {
+
+    font-size: 56px;
+    line-height: 60px;
+    margin-bottom: 64px;
+}
+
+.checkout_menu_section .container .menu_taxonomy .menu_taxonomy_list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    column-gap: 16px;
+}
+
+.checkout_menu_section .container .menu_taxonomy .menu_taxonomy_list .btn {
+    background: var(--white_text);
+}
+
+.checkout_menu_section .container .menu_taxonomy .menu_taxonomy_list .btn:hover {
+    background: var(--yellow_background);
 }
