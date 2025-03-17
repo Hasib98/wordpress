@@ -258,9 +258,132 @@ $about_us_section_image = $about_section_group['about_us_section_image'];  // AC
         </div>
         <div class="swiper-pagination"></div>
     </div> -->
+</section>
 
-    <?php
-// Get the group field data
+<section class="reservation_section"
+    style=" background: url('<?php echo get_template_directory_uri() . '/assets/images/reservation_bg.png'; ?>') center/cover no-repeat;">
+    <div class="container">
+        <div class="contents">
+            <h1>Online Reservation</h1>
+            <div Class="input_fields_container">
+                <input class="reservation_inputs" type="text" placeholder="Your name">
+                <input class="reservation_inputs" type="text">
+                <input class="reservation_inputs" type="text">
+                <input class="reservation_inputs" type="text">
+                <input class="reservation_inputs" type="text">
+                <input class="reservation_inputs" type="text">
+            </div>
+        </div>
+    </div>
+</section>
+
+<?php
+
+$location_section_group = get_field('location_section_group');
+// /----------------------------------------------
+// /----------------------------------------------
+
+$daily_hours_group = $location_section_group['daily_hours_group'];
+
+$daily_hours_icon = $daily_hours_group['icon'];
+$business_hours_title = $daily_hours_group['business_hours_title'];
+$day_time_range_repeater = $daily_hours_group['day_time_range_repeater'];
+// /----------------------------------------------
+
+$locations_group = $location_section_group['locations_group'];
+
+$location_icon = $locations_group['icon'];
+$location_title = $locations_group['location_title'];
+$locations_address = $locations_group['address'];
+// /----------------------------------------------
+
+$contact_group = $location_section_group['contact_group'];
+
+$contact_icon = $contact_group['icon'];
+$contact_title = $contact_group['contact_title'];
+$contact_info_repeater = $contact_group['contact_info_repeater'];
+$location_cover_image = $location_section_group['location_cover_image'];
+
+?>
+
+<section class="location_section">
+    <div class=" container">
+        <div class="contact_location_info_group">
+            <div class="info_card">
+                <div class="image_container">
+                    <img src="<?php echo $daily_hours_icon; ?>" alt="">
+                </div>
+                <div>
+                    <h1><?php echo $business_hours_title; ?></h1>
+                    <?php
+                    if ($daily_hours_group && !empty($daily_hours_group['day_time_range_repeater'])):
+                        foreach ($daily_hours_group['day_time_range_repeater'] as $daily_time_range):
+                            // Check if 'nav_link' exists and is an array
+                            if (!empty($daily_time_range['day_from']) && !empty($daily_time_range['day_to']) && !empty($daily_time_range['time_from']) && !empty($daily_time_range['time_to'])):
+                                ?>
+
+                    <p>
+                        <span class="bold"><?php
+                                echo $daily_time_range['day_from']
+                                ?> - <?php
+                                echo $daily_time_range['day_to']
+                                ?>:</span><span><?php
+                                echo $daily_time_range['time_from']
+                                ?> - <?php
+                                echo $daily_time_range['time_to']
+                                ?></span>
+                    </p>
+                    <?php
+                            endif;  // End if nav_link exists
+                        endforeach;
+                    endif;
+                    ?>
+
+                </div>
+            </div>
+            <div class="info_card">
+                <div class="image_container">
+                    <img src="<?php echo $location_icon; ?>" alt="">
+                </div>
+                <div>
+                    <h1><?php echo $location_title; ?></h1>
+                    <p><?php echo $locations_address; ?></p>
+                </div>
+            </div>
+            <div class="info_card">
+                <div class="image_container">
+                    <img src="<?php echo $contact_icon; ?>" alt="">
+                </div>
+                <div>
+                    <h1>Contact</h1>
+                    <?php
+                    if ($contact_group && !empty($contact_group['contact_info_repeater'])):
+                        foreach ($contact_group['contact_info_repeater'] as $contact):
+                            // Check if 'nav_link' exists and is an array
+                            if (!empty($contact['contact_label']) && !empty($contact['contact_data'])):
+                                ?>
+                    <p><span
+                            class="bold"><?php echo $contact['contact_label']; ?>:</span><span><?php echo $contact['contact_data']; ?></span>
+                    </p>
+                    <?php
+                            endif;  // End if nav_link exists
+                        endforeach;
+                    endif;
+                    ?>
+                </div>
+            </div>
+
+        </div>
+        <div>
+            <img class="location_cover_image" src="<?php echo $location_cover_image; ?>" alt="">
+        </div>
+
+    </div>
+</section>
+
+
+<?php
+
 $newsletter_section_group = get_field('newsletter_section_group');
 
 // Extract all fields using the exact ACF field names
@@ -270,10 +393,8 @@ $newsletter_section_description = $newsletter_section_group['newsletter_section_
 $newsletter_section_input_field_text = $newsletter_section_group['newsletter_section_input_field_text'];
 $newsletter_section_button = $newsletter_section_group['newsletter_section_button'];  // ACF Link field
 $newsletter_section_image = $newsletter_section_group['newsletter_section_image'];  // ACF Image field (array)
-
-// Display the section
 ?>
-</section>
+
 <section class="newsletter_seciton">
     <div class="container">
         <div class="title_group">
@@ -281,7 +402,7 @@ $newsletter_section_image = $newsletter_section_group['newsletter_section_image'
             <h1 class="title"><?php echo $newsletter_section_title; ?></h1>
             <p class="description"><?php echo $about_section_description; ?></p>
             <div class="email_register">
-                <input type="text" placeholder="<?php  echo $newsletter_section_input_field_text?>">
+                <input type="text" placeholder="<?php echo $newsletter_section_input_field_text ?>">
                 <!-- <button> About Us</button> -->
                 <a href="<?php echo esc_url($newsletter_section_button['url']); ?>" class="btn subscribe_btn">
                     <?php echo esc_html($reserve_table_button['title'] ?? 'Subscribe'); ?></a>
