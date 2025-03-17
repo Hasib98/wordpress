@@ -216,15 +216,13 @@ button {
 }
 
 
-.header_content .logo {
+.logo {
     font-family: "Jomhuria", serif;
     color: var(--white_text);
     font-size: 64px;
     line-height: 40px;
     font-style: regular;
     margin: 0;
-
-
 }
 
 header nav .nav_menu {
@@ -340,16 +338,17 @@ header nav .nav_menu {
     transition: width 0.3s ease-in-out, background-color 0.3s ease-in-out;
 }
 
-.hero_section .container .title_group .search_input::placeholder {
-    color: white;
-}
-
 .hero_section .container .title_group .search_input:focus {
     /* background-color: yellow; */
     width: 250px;
     outline: none;
     /* Removes default blue focus outline */
 }
+
+.hero_section .container .title_group .search_input::placeholder {
+    color: white;
+}
+
 
 .hero_section .container .mouse_icon {
     /* background: #1a69c5; */
@@ -781,4 +780,209 @@ header nav .nav_menu {
 
 .checkout_menu_section .container .menu_taxonomy .menu_taxonomy_list .btn:hover {
     background: var(--yellow_background);
+}
+
+.swiper {
+    width: 100%;
+    height: 100%;
+}
+
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #9f4444;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+footer {
+
+    background: #010101;
+    height: 416px;
+    color: white;
+    padding-top: 64px;
+}
+
+footer .footer_top {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 64px;
+
+}
+
+footer .footer_top .text_container {
+    width: fit-content;
+
+}
+
+footer .text_container h1 {
+    padding-bottom: 32px;
+}
+
+footer .text_container p {
+    color: white;
+    padding-bottom: 32px;
+    width: 320px;
+
+
+}
+
+footer .text_container ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    column-gap: 32px;
+}
+
+
+
+footer .text_container ul li a {
+    text-decoration: none;
+    color: inherit;
+    font-family: "Cabin", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+
+}
+
+footer .get_app {
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+}
+
+footer .get_app p {
+    width: fit-content;
+    color: var(--yellow_background);
+    font-size: 16px;
+
+}
+
+footer .bottom_line {
+    width: 100%;
+    height: 1px;
+    background: #EAECF0;
+    margin-bottom: 32px;
+}
+
+footer .footer_bottom {
+    display: flex;
+    justify-content: space-between;
+}
+
+footer .footer_bottom .social_links {
+    display: flex;
+    gap: 24px;
+}
+
+footer .footer_bottom .social_links a {
+    max-height: 24x;
+    max-width: 24px;
+}
+
+footer .footer_bottom .social_links a .social_icon {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+
+
+/* ----------------------------------------
+
+***********newsletter_section***********
+
+------------------------------------------- */
+
+.newsletter_seciton {
+    background: #FCF9F2;
+    height: 670px;
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
+.newsletter_seciton .container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.newsletter_seciton .container .title_group {
+    width: 608px;
+}
+
+.newsletter_seciton .container .title_group .pre_title {
+
+    font-family: "Satisfy", cursive;
+    font-size: 24px;
+    color: var(--green_text);
+    margin-bottom: 6px;
+
+}
+
+.newsletter_seciton .container .title_group .title {
+
+
+    font-size: 48px;
+    line-height: 60px;
+    margin-bottom: 32px;
+
+}
+
+.newsletter_seciton .container .title_group .description {
+
+    font-size: 18px;
+    line-height: 28px;
+    color: var(--grey-paragraph-text);
+    margin-bottom: 40px;
+    width: 573px;
+    ;
+
+}
+
+.newsletter_seciton .container .title_group .email_register {}
+
+
+
+.newsletter_seciton .container .title_group input {
+    font-family: "Cabin", sans-serif;
+    font-size: 14px;
+    line-height: 24px;
+    font-weight: 400;
+    padding: 10px 22px;
+    border-radius: 32px;
+    border: 1px solid #6C6C6C;
+    width: 292px;
+    margin-right: 12px;
+}
+
+.newsletter_seciton .container .title_group input:focus {
+    outline: none;
+
+}
+
+
+
+.newsletter_seciton .container .title_group .subscribe_btn {
+    font-size: 18px;
+}
+
+
+.newsletter_seciton .container .newsletter_cover_image {
+    max-height: 510px;
+    min-width: 560px;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 8px;
 }
