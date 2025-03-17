@@ -386,20 +386,11 @@ document.addEventListener("DOMContentLoaded", function () {
                 const data = await response.json();
 
                 if (data.success) {
-                    console.log("Food Item uploaded successfully:", data);
-                    // alert("Food Item uploaded successfully.");
-                    // document.getElementById('output').src = ""; // Clears the image
-                    // document.getElementById('getImage').value = "";
-                    // document.getElementById('title').value = "";
-                    // document.getElementById('description').value = "";
-                    // document.getElementById('price').value = "";
-                    // document.getElementById('discount').value = "";
-                    // document.getElementById('quantity').value = "";
-                    // window.location = document.location.href;
-
+                    console.log( data);
+                    
 
                 } else {
-                    alert("User Registration failed: " + data.message);
+                    alert(data.message);
                 }
             } catch (error) {
                 console.error("Error:", error);

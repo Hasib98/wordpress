@@ -955,15 +955,20 @@ footer .footer_bottom .social_links a .social_icon {
     margin-bottom: 80px;
 }
 
-.reservation_section .container .contents h1 {}
-
+.reservation_section .container .contents .reservation_form {}
 
 .reservation_section .container .contents .input_fields_container {
     display: flex;
     gap: 32px;
     flex-wrap: wrap;
+    margin-bottom: 48px;
 
 
+}
+
+.reservation_section .container .contents .form_submit_button {
+    display: block;
+    margin: 0 auto;
 }
 
 .reservation_section .container .contents .reservation_inputs {
