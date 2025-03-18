@@ -22,7 +22,7 @@
 
         <!-- This div will be used to display posts -->
         <div class="swiper menu_swiper">
-            <div class="swiper-wrapper">
+            <div class="swiper-wrapper  menu_swiper_wrapper">
                 <!-- <div class="swiper-slide">Slide 1</div>
                 <div class="swiper-slide">Slide 2</div>
                 <div class="swiper-slide">Slide 3</div>

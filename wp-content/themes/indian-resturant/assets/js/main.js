@@ -1,23 +1,7 @@
-/* document.addEventListener("DOMContentLoaded", function () {
-    new Swiper(".offer_cards_container", {
-        slidesPerView: 3,
-        spaceBetween: 20,
-        navigation: {
-            nextEl: ".right",
-            prevEl: ".left",
-        },
-        loop: true,
-        autoplay: {
-            delay: 3000,
-            disableOnInteraction: false,
-        },
-    });
-});
- */
+
 
 document.addEventListener("DOMContentLoaded", function () {
-    new Swiper(".mySwiper", {
-        loop: true,
+    var swiper = new Swiper(".offer_swiper", {
         navigation: {
             nextEl: ".swiper-btn-next",
             prevEl: ".swiper-btn-prev",
@@ -26,6 +10,30 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* document.addEventListener("DOMContentLoaded", function () {
+    new Swiper(".offer_swiper", {
+        loop: true,
+        navigation: {
+            nextEl: ".swiper-btn-next",
+            prevEl: ".swiper-btn-prev",
+        },
+    });
+}); */
 
 document.addEventListener("DOMContentLoaded", function () {
     const form = document.getElementById("reservationForm");
@@ -98,7 +106,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
-
+/* 
 document.addEventListener("DOMContentLoaded", function () {
     new Swiper(".menu_swiper", {
        slidesPerView: 3,
@@ -111,79 +119,260 @@ document.addEventListener("DOMContentLoaded", function () {
      });
 });
 
-document.addEventListener('DOMContentLoaded', function() {
-    const categoryButtons = document.querySelectorAll('.btn');
-    
-    categoryButtons.forEach(function(button) {
-        button.addEventListener('click', async function() {
-            const categoryId = button.getAttribute('data-category-id');
-            console.log('Category ID:', categoryId);  
+*/
+async function get_menu(button) {
+    const categoryId = button.getAttribute('data-category-id');
+    console.log('Category ID:', categoryId);
 
-            // Change the background color of the clicked button to #FBC04E
-            button.style.backgroundColor = '#FBC04E';
+    // Change the background color of the clicked button to #FBC04E
+    button.style.backgroundColor = '#FBC04E';
 
-            // Optional: Reset background color of all other buttons (if needed)
-            categoryButtons.forEach(function(otherButton) {
-                if (otherButton !== button) {
-                    otherButton.style.backgroundColor = '';  // Reset to original color
-                }
+    // Optional: Reset background color of all other buttons (if needed)
+    const categoryButtons = document.querySelectorAll('.category_btn');
+    categoryButtons.forEach(function (otherButton) {
+        if (otherButton !== button) {
+            otherButton.style.backgroundColor = ''; // Reset to original color
+        }
+    });
+
+    // Create a new FormData object
+    const formData = new FormData();
+
+    // Append the categoryId and action to the FormData object
+    formData.append("category_id", categoryId);
+    formData.append("action", "get_menu_post_by_category");
+
+    try {
+        // Make the fetch request with async/await
+        const response = await fetch(ajax_object.ajax_url, {
+            method: "POST",
+            body: formData
+        });
+
+        const data = await response.json(); // Parse response as JSON
+
+        // Check if the request was successful
+        if (data.success) {
+            console.log("Server Response:", data);
+
+            // Get the swiper wrapper where the slides will be added
+            const swiperWrapper = document.querySelector('.swiper .menu_swiper_wrapper');
+            swiperWrapper.innerHTML = ''; // Clear any existing slides
+
+            // Loop through the posts and create a slide for each post
+            data.data.posts.forEach(function (post) {
+                const slide = document.createElement('div');
+                slide.classList.add('swiper-slide');
+                // slide.classList.add('swiper-slide-test');
+                // slide.classList.add('menu_swiper_slide');
+
+                // Create the slide content (HTML) using the post data
+                slide.innerHTML = `
+                    <div class="menu_item">
+                        <div>
+                        <img src="${post.image}" alt="${post.title}" class="menu_item_image">
+                        </div>
+                        <h1 class="menu-item-title">${post.title}</h1>
+                        <p class="menu-item-description">${post.description || 'No description available.'}</p>
+                        <div class="divider_line"></div>
+                        
+                        <div class="slide_foot">
+                        <a href="${post.permalink}" class="menu_item_link">Learn more</a>
+                        <p class="menu_item_price">${post.price || 'No price available.'}</p>
+                        </div>
+                        
+
+                    </div>
+                `;
+
+                // Append the slide to the swiper-wrapper
+                swiperWrapper.appendChild(slide);
             });
 
-            // Create a new FormData object
-            const formData = new FormData();
-            
-            // Append the categoryId and action to the FormData object
-            formData.append("category_id", categoryId);
-            formData.append("action", "get_menu_post_by_category");
-
-            try {
-                // Make the fetch request with async/await
-                const response = await fetch(ajax_object.ajax_url, {
-                    method: "POST",
-                    body: formData
-                });
-
-                const data = await response.json(); // Parse response as JSON
-
-                // Check if the request was successful
-                if (data.success) {
-                    console.log("Server Response:", data);
-                    // Insert the posts into the page (assuming you have a container for this)
-                    // document.getElementById('menu-posts-container').innerHTML = data.posts;
-                } else {
-                    alert(data.message);  // Show error message if something goes wrong
-                }
-            } catch (error) {
-                console.error("Error:", error);
-                alert("An error occurred. Please try again.");
+            // Reinitialize Swiper to reflect the new slides
+            if (window.swiperInstance) {
+                window.swiperInstance.destroy(true, true); // Destroy the existing swiper instance before reinitializing
             }
+
+            window.swiperInstance = new Swiper(".menu_swiper", {
+                slidesPerView: 3,
+                spaceBetween: 30,
+                freeMode: true,
+                pagination: {
+                    el: ".swiper-pagination",
+                    clickable: true,
+                },
+            });
+
+        } else {
+            alert(data.message); // Show error message if something goes wrong
+        }
+    } catch (error) {
+        console.error("Error:", error);
+        alert("An error occurred. Please try again.");
+    }
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+    const categoryButtons = document.querySelectorAll('.category_btn');
+
+    // Ensure there's at least one category button
+    if (categoryButtons.length > 0) {
+        // Set the first button as active (optional, for visual feedback)
+        categoryButtons[0].style.backgroundColor = '#FBC04E'; // Active color for the first button
+
+        // Trigger the fetch for the first button
+        get_menu(categoryButtons[0]);
+    }
+
+    // Add event listeners to all category buttons
+    categoryButtons.forEach(function (button) {
+        button.addEventListener('click', function () {
+            get_menu(button);  // Fetch menu for clicked category
         });
     });
 });
 
 
 
-/* document.addEventListener('DOMContentLoaded', function() {
-    const categoryButtons = document.querySelectorAll('.btn');
-    
-    categoryButtons.forEach(function(button) {
-        button.addEventListener('click', async function() {
+// document.addEventListener('DOMContentLoaded', function () {
+//     const categoryButtons = document.querySelectorAll('.category_btn');
+//     // Automatically trigger click on the first button to load the initial category
+//     /* if (categoryButtons.length > 0) {
+//         // Trigger click on the first category button
+//         categoryButtons[0].click();
+
+//         // Set the first button as active (optional, for visual feedback)
+//         categoryButtons[0].style.backgroundColor = '#FBC04E'; // Active color for the first button
+
+//         // Optional: Reset the background color for all other buttons
+//         categoryButtons.forEach(function (otherButton, index) {
+//             if (index !== 0) {
+//                 otherButton.style.backgroundColor = ''; // Reset to original color
+//             }
+//         });
+//     } */
+
+//     categoryButtons.forEach(function (button) {
+//         button.addEventListener('click'),
+//         button.addEventListener('click', async function () {
+//             const categoryId = button.getAttribute('data-category-id');
+//             console.log('Category ID:', categoryId);
+
+//             // Change the background color of the clicked button to #FBC04E
+//             button.style.backgroundColor = '#FBC04E';
+
+//             // Optional: Reset background color of all other buttons (if needed)
+//             categoryButtons.forEach(function (otherButton) {
+//                 if (otherButton !== button) {
+//                     otherButton.style.backgroundColor = ''; // Reset to original color
+//                 }
+//             });
+
+//             // Create a new FormData object
+//             const formData = new FormData();
+
+//             // Append the categoryId and action to the FormData object
+//             formData.append("category_id", categoryId);
+//             formData.append("action", "get_menu_post_by_category");
+
+//             try {
+//                 // Make the fetch request with async/await
+//                 const response = await fetch(ajax_object.ajax_url, {
+//                     method: "POST",
+//                     body: formData
+//                 });
+
+//                 const data = await response.json(); // Parse response as JSON
+
+//                 // Check if the request was successful
+//                 if (data.success) {
+//                     console.log("Server Response:", data);
+
+//                     // Get the swiper wrapper where the slides will be added
+//                     const swiperWrapper = document.querySelector('.swiper .swiper-wrapper');
+//                     swiperWrapper.innerHTML = ''; // Clear any existing slides
+
+//                     // Loop through the posts and create a slide for each post
+//                     data.data.posts.forEach(function (post) {
+//                         const slide = document.createElement('div');
+//                         slide.classList.add('swiper-slide');
+
+//                         // Create the slide content (HTML) using the post data
+//                         slide.innerHTML = `
+//                             <div class="menu-item">
+//                                 <img src="${post.image}" alt="${post.title}" class="menu-item-image">
+//                                 <h3 class="menu-item-title">${post.title}</h3>
+//                                 <p class="menu-item-description">${post.excerpt || 'No description available.'}</p>
+//                                 <a href="${post.permalink}" class="menu-item-link">View Item</a>
+//                             </div>
+//                         `;
+
+//                         // Append the slide to the swiper-wrapper
+//                         swiperWrapper.appendChild(slide);
+//                     });
+
+//                     // Reinitialize Swiper to reflect the new slides
+//                     new Swiper(".menu_swiper", {
+//                         slidesPerView: 3,
+//                         spaceBetween: 30,
+//                         freeMode: true,
+//                         pagination: {
+//                             el: ".swiper-pagination",
+//                             clickable: true,
+//                         },
+//                     });
+//                 } else {
+//                     alert(data.message); // Show error message if something goes wrong
+//                 }
+//             } catch (error) {
+//                 console.error("Error:", error);
+//                 alert("An error occurred. Please try again.");
+//             }
+//         });
+//     });
+// });
+
+
+/* 
+document.addEventListener('DOMContentLoaded', function () {
+    const categoryButtons = document.querySelectorAll('.category_btn');
+
+    // Automatically trigger click on the first button to load the initial category
+    if (categoryButtons.length > 0) {
+        // Trigger click on the first category button
+        categoryButtons[0].click();
+
+        // Set the first button as active (optional, for visual feedback)
+        categoryButtons[0].style.backgroundColor = '#FBC04E'; // Active color for the first button
+
+        // Optional: Reset the background color for all other buttons
+        categoryButtons.forEach(function (otherButton, index) {
+            if (index !== 0) {
+                otherButton.style.backgroundColor = ''; // Reset to original color
+            }
+        });
+    }
+
+    // Add event listeners to all category buttons
+    categoryButtons.forEach(function (button) {
+        button.addEventListener('click', async function () {
             const categoryId = button.getAttribute('data-category-id');
-            console.log('Category ID:', categoryId);  
+            console.log('Category ID:', categoryId);
 
             // Change the background color of the clicked button to #FBC04E
             button.style.backgroundColor = '#FBC04E';
 
             // Optional: Reset background color of all other buttons (if needed)
-            categoryButtons.forEach(function(otherButton) {
+            categoryButtons.forEach(function (otherButton) {
                 if (otherButton !== button) {
-                    otherButton.style.backgroundColor = '';  // Reset to original color
+                    otherButton.style.backgroundColor = ''; // Reset to original color
                 }
             });
 
             // Create a new FormData object
             const formData = new FormData();
-            
+
             // Append the categoryId and action to the FormData object
             formData.append("category_id", categoryId);
             formData.append("action", "get_menu_post_by_category");
@@ -200,34 +389,42 @@ document.addEventListener('DOMContentLoaded', function() {
                 // Check if the request was successful
                 if (data.success) {
                     console.log("Server Response:", data);
-                    
-                    // Clear existing Swiper slides if needed (optional)
-                    const postsContainer = document.querySelector('.swiper-wrapper');
-                    postsContainer.innerHTML = ''; // Clear the previous posts
 
-                    // Loop through the posts and generate new swiper slides
-                    data.posts.forEach(post => {
-                        const postElement = document.createElement('div');
-                        postElement.classList.add('swiper-slide'); // Add the swiper-slide class
+                    // Get the swiper wrapper where the slides will be added
+                    const swiperWrapper = document.querySelector('.swiper .swiper-wrapper');
+                    swiperWrapper.innerHTML = ''; // Clear any existing slides
 
-                        // Build the HTML content for the post slide
-                        postElement.innerHTML = `
+                    // Loop through the posts and create a slide for each post
+                    data.data.posts.forEach(function (post) {
+                        const slide = document.createElement('div');
+                        slide.classList.add('swiper-slide');
+
+                        // Create the slide content (HTML) using the post data
+                        slide.innerHTML = `
                             <div class="menu-item">
-                                <h3><a href="${post.permalink}">${post.title}</a></h3>
-                                <p>${post.excerpt}</p>
-                                ${post.image ? `<img src="${post.image}" alt="${post.title}">` : ''}
+                                <img src="${post.image}" alt="${post.title}" class="menu-item-image">
+                                <h3 class="menu-item-title">${post.title}</h3>
+                                <p class="menu-item-description">${post.excerpt || 'No description available.'}</p>
+                                <a href="${post.permalink}" class="menu-item-link">View Item</a>
                             </div>
                         `;
 
-                        // Append the newly created slide to the swiper-wrapper
-                        postsContainer.appendChild(postElement);
+                        // Append the slide to the swiper-wrapper
+                        swiperWrapper.appendChild(slide);
                     });
 
-                    // Initialize or update Swiper instance
-                    // initializeSwiper();
-
+                    // Reinitialize Swiper to reflect the new slides
+                    new Swiper(".menu_swiper", {
+                        slidesPerView: 3,
+                        spaceBetween: 30,
+                        freeMode: true,
+                        pagination: {
+                            el: ".swiper-pagination",
+                            clickable: true,
+                        },
+                    });
                 } else {
-                    alert(data.message);  // Show error message if something goes wrong
+                    alert(data.message); // Show error message if something goes wrong
                 }
             } catch (error) {
                 console.error("Error:", error);
@@ -236,43 +433,39 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+ */
 
+/* document.addEventListener('DOMContentLoaded', function () {
+    const categoryButtons = document.querySelectorAll('.category_btn');
 
+    // Ensure there's at least one category button
+    if (categoryButtons.length > 0) {
+        // Add the 'active' class to the first button visually
+        categoryButtons[0].classList.add('active');
 
+        // Trigger click on the first button to load the content via fetch request
+        categoryButtons[0].click(); // Simulate a click on the first button directly
+    }
 
-
-document.addEventListener('DOMContentLoaded', function() {
-    // Initialize Swiper
-    const swiper = new Swiper('.menu_swiper', {
-        slidesPerView: 3,
-        spaceBetween: 30,
-        freeMode: true,
-        pagination: {
-            el: '.swiper-pagination',
-            clickable: true,
-        },
-    });
-
-    const categoryButtons = document.querySelectorAll('.btn');
-    
-    categoryButtons.forEach(function(button) {
-        button.addEventListener('click', async function() {
+    // Add event listeners to all category buttons
+    categoryButtons.forEach(function (button) {
+        button.addEventListener('click', async function () {
             const categoryId = button.getAttribute('data-category-id');
-            console.log('Category ID:', categoryId);  
+            console.log('Category ID:', categoryId);
 
             // Change the background color of the clicked button to #FBC04E
             button.style.backgroundColor = '#FBC04E';
 
             // Optional: Reset background color of all other buttons (if needed)
-            categoryButtons.forEach(function(otherButton) {
+            categoryButtons.forEach(function (otherButton) {
                 if (otherButton !== button) {
-                    otherButton.style.backgroundColor = '';  // Reset to original color
+                    otherButton.style.backgroundColor = ''; // Reset to original color
                 }
             });
 
             // Create a new FormData object
             const formData = new FormData();
-            
+
             // Append the categoryId and action to the FormData object
             formData.append("category_id", categoryId);
             formData.append("action", "get_menu_post_by_category");
@@ -289,34 +482,42 @@ document.addEventListener('DOMContentLoaded', function() {
                 // Check if the request was successful
                 if (data.success) {
                     console.log("Server Response:", data);
-                    
-                    // Clear existing Swiper slides if needed (optional)
-                    const postsContainer = document.querySelector('.swiper-wrapper');
-                    postsContainer.innerHTML = ''; // Clear the previous posts
 
-                    // Loop through the posts and generate new swiper slides
-                    data.posts.forEach(post => {
-                        const postElement = document.createElement('div');
-                        postElement.classList.add('swiper-slide'); // Add the swiper-slide class
+                    // Get the swiper wrapper where the slides will be added
+                    const swiperWrapper = document.querySelector('.swiper .swiper-wrapper');
+                    swiperWrapper.innerHTML = ''; // Clear any existing slides
 
-                        // Build the HTML content for the post slide
-                        postElement.innerHTML = `
+                    // Loop through the posts and create a slide for each post
+                    data.data.posts.forEach(function (post) {
+                        const slide = document.createElement('div');
+                        slide.classList.add('swiper-slide');
+
+                        // Create the slide content (HTML) using the post data
+                        slide.innerHTML = `
                             <div class="menu-item">
-                                <h3><a href="${post.permalink}">${post.title}</a></h3>
-                                <p>${post.excerpt}</p>
-                                ${post.image ? `<img src="${post.image}" alt="${post.title}">` : ''}
+                                <img src="${post.image}" alt="${post.title}" class="menu-item-image">
+                                <h3 class="menu-item-title">${post.title}</h3>
+                                <p class="menu-item-description">${post.excerpt || 'No description available.'}</p>
+                                <a href="${post.permalink}" class="menu-item-link">View Item</a>
                             </div>
                         `;
 
-                        // Append the newly created slide to the swiper-wrapper
-                        postsContainer.appendChild(postElement);
+                        // Append the slide to the swiper-wrapper
+                        swiperWrapper.appendChild(slide);
                     });
 
-                    // Update Swiper to include the new slides without reinitializing
-                    swiper.update();
-
+                    // Reinitialize Swiper to reflect the new slides after the content is added
+                    new Swiper(".menu_swiper", {
+                        slidesPerView: 3,
+                        spaceBetween: 30,
+                        freeMode: true,
+                        pagination: {
+                            el: ".swiper-pagination",
+                            clickable: true,
+                        },
+                    });
                 } else {
-                    alert(data.message);  // Show error message if something goes wrong
+                    alert(data.message); // Show error message if something goes wrong
                 }
             } catch (error) {
                 console.error("Error:", error);
@@ -325,6 +526,4 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
-
-
  */
