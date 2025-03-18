@@ -152,7 +152,7 @@ h1 {
 section {
     width: 100%;
     /* background: #4b188e; */
-    border-bottom: 1px solid red;
+    /* border-bottom: 1px solid red; */
 }
 
 header {
@@ -278,6 +278,27 @@ header nav .nav_menu {
     height: 100%;
     background: linear-gradient(to right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0));
 }
+
+.hero_section .add_text_banner {
+    width: 100%;
+    width: 37px;
+    background: #FBC04E;
+    padding-top: 9px;
+    padding-bottom: 9px;
+    text-align: center;
+    ;
+}
+
+.hero_section .add_text_banner span {
+    width: 100%;
+    width: 37px;
+    background: #FBC04E;
+    padding-top: 9px;
+    padding-bottom: 9px;
+    text-align: center;
+    ;
+}
+
 
 .hero_section .container {
 
@@ -660,6 +681,7 @@ header nav .nav_menu {
 .daily_offer_section .content_group {
     display: flex;
     justify-content: space-between;
+    gap: 32px;
 }
 
 .daily_offer_section .content_group .image_container img {
@@ -677,8 +699,8 @@ header nav .nav_menu {
     width: 713px;
     display: flex;
     flex-direction: column;
-    /* justify-content: space-between; */
-    /* height: 100%; */
+    /* justify-content: space-between;
+    height: 100%; */
     gap: 32px;
 }
 

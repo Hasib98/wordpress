@@ -13,9 +13,19 @@ if ($hero_section_group) {
     $see_menu_button = $hero_section_group['see_menu_button'];
     $search_input = $hero_section_group['search_input'];
     $mouse_icon = $hero_section_group['mouse_icon'];
+    $ad_text_banner = $hero_section_group['ad_text_banner'];
 }
 ?>
 <section class='hero_section' style=" background: url('<?php echo $background_image; ?>') center/cover no-repeat;">
+    <?php
+        if($ad_text_banner){
+            
+            ?>
+    <div class="add_text_banner"><span><?php echo ad_text_banner; ?></span></div>
+    <?php      
+            }
+    ?>
+
 
     <div class="container">
         <div class="contents">
