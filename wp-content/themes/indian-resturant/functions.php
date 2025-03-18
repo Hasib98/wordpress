@@ -101,4 +101,66 @@ add_action('wp_ajax_reservation_form_submission', 'reservation_form_submission')
 add_action('wp_ajax_nopriv_reservation_form_submission', 'reservation_form_submission');
 
 
+
+
+
+
+
+function get_menu_post_by_category() {
+    // Check if category_id is set in the request
+    if (isset($_POST['category_id'])) {
+        $category_id = intval($_POST['category_id']);
+        
+        // Set up the WP_Query arguments to fetch posts from the selected category
+        $args = array(
+            'post_type' => 'menu-item',  // Your custom post type
+            'tax_query' => array(
+                array(
+                    'taxonomy' => 'menu-category',  // The taxonomy
+                    'field' => 'id',
+                    'terms' => $category_id,  // The selected category ID
+                ),
+            ),
+            'posts_per_page' => -1,  // Get all posts in the selected category
+        );
+        
+        // Run the query
+        $query = new WP_Query($args);
+        
+        // Check if there are posts
+        if ($query->have_posts()) {
+            $posts_array = array(); // Initialize an empty array to store post data
+            
+            while ($query->have_posts()) : $query->the_post();
+            // Get the ACF custom field 'menu_food_image'
+            $image_url = get_field('menu_food_image');  
+            
+            // Add post data to the array
+            $posts_array[] = array(
+                'id' => get_the_ID(),
+                'title' => get_the_title(),
+                'excerpt' => get_the_excerpt(),
+                'image' => $image_url ? esc_url($image_url) : '',
+                'permalink' => get_permalink()
+            );
+        endwhile;
+        
+        wp_reset_postdata();
+        
+        // Send the posts data back as JSON response
+        wp_send_json_success(array('posts' => $posts_array));
+    } else {
+        wp_send_json_error(array('message' => 'No posts found for this category.'));
+    }
+} else {
+    wp_send_json_error(array('message' => 'Invalid category.'));
+}
+
+// Always call 'die()' to terminate AJAX requests
+die();
+}
+
+add_action('wp_ajax_get_menu_post_by_category', 'get_menu_post_by_category');
+add_action('wp_ajax_nopriv_get_menu_post_by_category', 'get_menu_post_by_category');
+
 ?>
