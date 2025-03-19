@@ -16,7 +16,7 @@ $newsletter_section_image = $newsletter_section_group['newsletter_section_image'
         <div class="title_group">
             <p class="pre_title"><?php echo $newsletter_section_pre_title; ?></p>
             <h1 class="title"><?php echo $newsletter_section_title; ?></h1>
-            <p class="description"><?php echo $about_section_description; ?></p>
+            <p class="description"><?php echo $newsletter_section_description; ?></p>
             <div class="email_register">
                 <input type="text" placeholder="<?php echo $newsletter_section_input_field_text ?>">
                 <!-- <button> About Us</button> -->
