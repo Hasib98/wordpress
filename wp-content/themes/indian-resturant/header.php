@@ -1,4 +1,5 @@
 <?php
+if(!defined("ABSPATH")) exit;
 // Get the group field
 $header_group = get_field('header_group', 'options');
 

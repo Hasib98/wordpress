@@ -96,7 +96,13 @@ $location_cover_image = $location_section_group['location_cover_image'];
 
         </div>
         <div>
-            <img class="location_cover_image" src="<?php echo $location_cover_image; ?>" alt="">
+            <div class="embed_map_fixed">
+                <div class="embed_map_container"><iframe class="embed_map_frame" frameborder="0" scrolling="no"
+                        marginheight="0" marginwidth="0"
+                        src="https://maps.google.com/maps?q=19.075983,72.877655&hl=en;z=14&amp;output=embed"></iframe>
+                </div>
+            </div>
+            <!-- <img class="location_cover_image" src="<?php echo $location_cover_image; ?>" alt=""> -->
         </div>
     </div>
 </section>

@@ -1,4 +1,4 @@
-<?php   wp_footer(  );  ?>
+<?php   wp_footer();  ?>
 <?php
 // Get the group field
 $footer_group = get_field('footer_group', 'options');
@@ -86,3 +86,5 @@ if ($footer_group) {
 </body>
 
 </html>
+
+

@@ -24,7 +24,8 @@ $about_us_section_image = $about_section_group['about_us_section_image'];  // AC
                 <h1 class="title"><?php echo $about_section_title; ?></h1>
                 <p class="description"><?php echo $about_section_description; ?></p>
 
-                <button> About Us</button>
+                <a href="<?php echo esc_url($about_us_button['url']); ?>" class="btn">
+                    <?php echo esc_html($about_us_button['title'] ?? 'See Menu'); ?></a>
 
             </div>
             <div class="customer_review">

@@ -45,7 +45,7 @@ function reservation_form_submission()
     $time = sanitize_text_field($_POST['time']);
 
     // PHPMailer SMTP Configuration
-    $mail = new PHPMailer(true);
+    $mail = new PHPMailer(exceptions: true);
     // $pass = 'testpass';  // ❌ Replace this with an App Password (NOT your real password)
     $email_id = 'phoenixoffire1998@gmail.com';
 
