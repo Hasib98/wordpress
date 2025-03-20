@@ -30,6 +30,8 @@ function indian_resturant_register_style()
         '1,0,0',
         'all'
     );
+wp_dequeue_style( 'contact-form-7' );
+
 }
 
 add_action('wp_enqueue_scripts', 'indian_resturant_register_style');
