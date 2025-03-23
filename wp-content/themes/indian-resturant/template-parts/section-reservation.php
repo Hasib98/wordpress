@@ -1,9 +1,8 @@
-<section class="reservation_section"
-    style=" background: url('<?php echo get_template_directory_uri() . '/assets/images/reservation_bg.png'; ?>') center/cover no-repeat;">
+<section class="reservation_section">
     <div class="container">
         <div class="contents">
-            <h1>Online Reservation</h1>
-            <form class="reservation_form" id="reservationForm">
+            <h1 style="color:black;">Online Reservation</h1>
+            <!-- <form class="reservation_form" id="reservationForm">
                 <div class="input_fields_container">
                     <input class="reservation_inputs" type="text" id="name" placeholder="Your name" required>
                     <input class="reservation_inputs" type="tel" id="phone" placeholder="Phone number" required>
@@ -20,7 +19,10 @@
                     <input class="reservation_inputs" type="time" id="time" required>
                 </div>
                 <button class="form_submit_button" type="submit">Submit your Reservation</button>
-            </form>
+            </form> -->
+
+            <?php echo do_shortcode('[contact-form-7 id="4c8138c" title="reservation"]'); ?>
+
 
 
         </div>

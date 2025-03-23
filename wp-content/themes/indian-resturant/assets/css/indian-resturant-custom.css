@@ -1158,7 +1158,7 @@ footer .footer_bottom .social_links a .social_icon {
     margin-bottom: 80px;
 }
 
-.reservation_section .container .contents .reservation_form {}
+/* .reservation_section .container .contents .reservation_form {}
 
 .reservation_section .container .contents .input_fields_container {
     display: flex;
@@ -1179,27 +1179,22 @@ footer .footer_bottom .social_links a .social_icon {
     height: 60px;
     justify-content: space-between;
     border-radius: 4px;
-    border-width: 1px;
-    padding-top: 18px;
-    padding-right: 16px;
-    padding-bottom: 18px;
     padding-left: 16px;
-    background: #7B7B7B80;
-    border: 1px solid #616161;
-    color: var(--white_text);
+    border: 1px solid #E8DCC6;
+    color: var(--black_text);
 
 
 }
 
 .reservation_section .container .contents .reservation_inputs::placeholder {
-    color: var(--white_text);
+    color: #999999;
 }
 
 .reservation_section .container .contents .reservation_inputs:focus {
 
     outline: none;
 }
-
+ */
 /* ----------------------------------------
 
 ***********location_section***********
@@ -1404,36 +1399,41 @@ footer .footer_bottom .social_links a .social_icon {
 
 
 
+.screen-reader-response {
+    display: none;
+}
 
-.contact_section{
+.contact_section {
     height: 861px;
     padding-top: 80px;
     padding-bottom: 80px;
 }
 
-.contact_section .container{
+.contact_section .container {
     width: 1054px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     /* background: gray; */
 }
-.contact_section .container .contact_info{
+
+.contact_section .container .contact_info {
     width: 443px;
     height: 661px;
     border-radius: 8px;
     background: #292929;
     padding: 40px 25px;
-    
+
 }
-.contact_section .contact_info h1{
+
+.contact_section .contact_info h1 {
     font-weight: 800;
     font-size: 40px;
     color: var(--white_text);
 }
 
 
-.contact_section .contact_info p.contact_description{
+.contact_section .contact_info p.contact_description {
     font-weight: 400;
     font-size: 18px;
     line-height: 150%;
@@ -1442,13 +1442,13 @@ footer .footer_bottom .social_links a .social_icon {
 }
 
 
-.contact_section .contact_info .contact_single_info{
+.contact_section .contact_info .contact_single_info {
     display: flex;
     margin-bottom: 20px;
 }
 
 
-.contact_section .contact_info .contact_single_info .icon_bg{
+.contact_section .contact_info .contact_single_info .icon_bg {
     width: 64px;
     height: 64px;
     border-radius: 8px;
@@ -1458,29 +1458,30 @@ footer .footer_bottom .social_links a .social_icon {
     justify-content: center;
 }
 
-.contact_section .contact_info .contact_single_info .icon_bg .icon{
+.contact_section .contact_info .contact_single_info .icon_bg .icon {
     height: 24px;
     width: 24px;
 }
-.contact_section .contact_info .contact_single_info .contact_data{
+
+.contact_section .contact_info .contact_single_info .contact_data {
     margin-left: 16px;
 }
 
-.contact_section .contact_info .contact_single_info .contat_label{
+.contact_section .contact_info .contact_single_info .contat_label {
     margin-bottom: 5px;
     font-weight: 400;
     font-size: 18px;
-    color:var(--white_text);
+    color: var(--white_text);
 }
 
-.contact_section .contact_info .contact_single_info .contact_value{
+.contact_section .contact_info .contact_single_info .contact_value {
     font-weight: 700;
     font-size: 24px;
-    color:var(--white_text);
+    color: var(--white_text);
 }
 
 
-.contact_section .container .contact_form{
+.contact_section .container .contact_form {
     /* display: flex;
     flex-direction: column;
     background: pink; */
@@ -1488,23 +1489,29 @@ footer .footer_bottom .social_links a .social_icon {
     height: 515px;
 
 }
-.contact_section .container .contact_form .wpcf7{
-    /* display: flex; */
+
+/* .contact_section .container .contact_form .screen-reader-response {
+    display: none;
+} */
+
+/* 
+.contact_section .container .contact_form .wpcf7 {
+
     height: 100%;
     width: 100%;
 }
-.contact_section .container .contact_form .wpcf7 .screen-reader-response{
+
+.screen-reader-response {
     display: none;
 }
-.contact_section .container .contact_form form{
-    /* background: blue; */
-}
 
-/* Remove default Contact Form 7 styles */
-.wpcf7-form input,
-.wpcf7-form textarea,
-.wpcf7-form select {
-    all: unset; /* Removes all default styles */
+.contact_section .container .contact_form .wpcf7-form {}
+
+
+.contact_section .container .contact_form .wpcf7-form input,
+.contact_section .container .contact_form .wpcf7-form textarea,
+.contact_section .container .contact_form .wpcf7-form select {
+    all: unset;
     width: 100%;
     border: 1px solid #E8DCC6;
     padding: 10px;
@@ -1512,17 +1519,17 @@ footer .footer_bottom .social_links a .social_icon {
     background: #F7F7F6;
 
 }
-.wpcf7-form textarea{
-   
-        height: 143px;
-        /* width: 50em; */
-    }
+
+.contact_section .container .contact_form .wpcf7-form textarea {
+
+    height: 143px;
+
+}
 
 
-/* Reset the submit button */
-.wpcf7-form input[type="submit"] {
+
+.contact_section .container .contact_form .wpcf7-form input[type="submit"] {
     all: unset;
-    /* background: #007bff; */
     font-family: 'Cabin', serif;
     background: var(--yellow_background);
     border: none;
@@ -1536,18 +1543,19 @@ footer .footer_bottom .social_links a .social_icon {
     text-align: center;
 }
 
-/* Hover effect for submit button */
-.wpcf7-form input[type="submit"]:hover {
+
+
+.contact_section .container .contact_form .wpcf7-form input[type="submit"]:hover {
     background: var(--yellow_background);
 
 }
 
-/* Remove error message styles */
+
 .wpcf7-not-valid-tip {
     display: none !important;
 }
 
-/* Custom error messages */
+
 .wpcf7-form-control.wpcf7-not-valid {
     border: 1px solid red !important;
 }
@@ -1555,6 +1563,8 @@ footer .footer_bottom .social_links a .social_icon {
 .wpcf7-form p {
     margin-bottom: 24px;
 }
-.wpcf7-form p label{
+
+.wpcf7-form p label {
     margin-bottom: 13px;
-}
+} 
+    */

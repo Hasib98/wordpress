@@ -24,7 +24,13 @@ $contact_group = $location_section_group['contact_group'];
 $contact_icon = $contact_group['icon'];
 $contact_title = $contact_group['contact_title'];
 $contact_info_repeater = $contact_group['contact_info_repeater'];
-$location_cover_image = $location_section_group['location_cover_image'];
+
+
+$map_group = $location_section_group['map_group'];
+
+$map_latitude = $map_group['map_latitude'];
+$map_longitude = $map_group['map_longitude'];
+
 
 ?>
 
@@ -100,10 +106,10 @@ $location_cover_image = $location_section_group['location_cover_image'];
             <div class="embed_map_fixed">
                 <div class="embed_map_container"><iframe class="embed_map_frame" frameborder="0" scrolling="no"
                         marginheight="0" marginwidth="0"
-                        src="https://maps.google.com/maps?q=19.075983,72.877655&hl=en;z=14&amp;output=embed"></iframe>
+                        src="https://maps.google.com/maps?q=<?php echo $map_latitude.','.$map_longitude; ?>&hl=en;z=14&amp;output=embed"></iframe>
                 </div>
             </div>
-            <!-- <img class="location_cover_image" src="<?php echo $location_cover_image; ?>" alt=""> -->
+
         </div>
     </div>
 </section>
