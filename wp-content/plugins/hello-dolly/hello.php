@@ -59,7 +59,7 @@ function hello_dolly() {
 
 	printf(
 		'<p id="dolly"><span class="screen-reader-text">%s </span><span dir="ltr"%s>%s</span></p>',
-		__( 'Quote from Hello Dolly song, by Jerry Herman:' ),
+		__( 'Quote from Hello Dolly song, by Jerry Herman:', 'hello-dolly' ),
 		$lang,
 		$chosen
 	);
@@ -78,6 +78,9 @@ function dolly_css() {
 		margin: 0;
 		font-size: 12px;
 		line-height: 1.6666;
+		color: red;
+		font-weight: 900;
+		font-size: 40px;
 	}
 	.rtl #dolly {
 		float: left;
