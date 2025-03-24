@@ -1141,7 +1141,7 @@ footer .footer_bottom .social_links a .social_icon {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(255, 255, 255, 0.022);
+    background: #ffffff06;
     backdrop-filter: blur(10px);
 }
 
@@ -1158,43 +1158,86 @@ footer .footer_bottom .social_links a .social_icon {
     margin-bottom: 80px;
 }
 
-/* .reservation_section .container .contents .reservation_form {}
-
-.reservation_section .container .contents .input_fields_container {
-    display: flex;
-    gap: 32px;
-    flex-wrap: wrap;
+.reservation_section .container .contents .reservation_form {
+    width: 100%;
+   
+}
+.reservation_section .container .contents .reservation_form form .form_fields {
+    width: 100%;
+    /* background: pink; */
     margin-bottom: 48px;
-
-
+   
 }
 
-.reservation_section .container .contents .form_submit_button {
-    display: block;
-    margin: 0 auto;
+
+
+.reservation_section .container .contents .reservation_form form p:first-child{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 11px;
+    align-items: center; 
+}
+.reservation_section .container .contents .reservation_form form > p{
+    display: flex;
+    align-items: center; 
+    justify-content: center;
 }
 
-.reservation_section .container .contents .reservation_inputs {
+.reservation_section .container .contents .reservation_form form p span input,
+.reservation_section .container .contents .reservation_form form p span select {
     width: 392px;
     height: 60px;
-    justify-content: space-between;
+    box-sizing: border-box;
     border-radius: 4px;
-    padding-left: 16px;
     border: 1px solid #E8DCC6;
-    color: var(--black_text);
-
-
-}
-
-.reservation_section .container .contents .reservation_inputs::placeholder {
+    padding-left: 16px;
+    padding-right: 16px;
+    font-size: 16px;
+    background: transparent;
+    appearance: none; 
     color: #999999;
 }
 
-.reservation_section .container .contents .reservation_inputs:focus {
-
-    outline: none;
+/* Select box styling with a custom dropdown arrow */
+.reservation_section .container .contents .reservation_form form p span select {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18"><path fill="%23000000" d="M7 10l5 5 5-5z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 16px center;
+    background-size: 18px;
+    padding-right: 40px;
+    cursor: pointer;
 }
- */
+
+.reservation_section .container .contents .reservation_form form p span input[type="date"] {
+    position: relative;
+    padding-right: 40px; 
+    cursor: pointer;
+}
+
+
+
+
+.reservation_section .container .contents .reservation_form form input[type="submit"] {
+    all: unset;
+    font-family: 'Cabin', serif;
+    background: var(--yellow_background);
+    border: none;
+    padding: 11px 28px;
+    border-radius: 32px;
+    font-size: 18px;
+    font-weight: 400;
+    text-decoration: none;
+    border: 1px solid var(--yellow_background);
+    width: 238px;
+    text-align: center;
+}
+.reservation_section .container .contents .reservation_form form input[type="submit"]:hover {
+    background: var(--white_text);
+}
+
+
+
+
 /* ----------------------------------------
 
 ***********location_section***********
@@ -1483,52 +1526,45 @@ footer .footer_bottom .social_links a .social_icon {
 
 .contact_section .container .contact_form {
     /* display: flex;
-    flex-direction: column;
-    background: pink; */
+    flex-direction: column; */
+    /* background: pink;  */
     width: 504px;
     height: 515px;
 
 }
-
-/* .contact_section .container .contact_form .screen-reader-response {
-    display: none;
-} */
-
-/* 
-.contact_section .container .contact_form .wpcf7 {
-
-    height: 100%;
+.contact_section .container .contact_form form .contact_form_label{
+    color: #333333;
     width: 100%;
+    margin-bottom: 24px;
+   
+}
+.contact_section .container .contact_form form .contact_form_label span{
+    color: #333333;
+    width: 100%;
+   
 }
 
-.screen-reader-response {
-    display: none;
-}
-
-.contact_section .container .contact_form .wpcf7-form {}
-
-
-.contact_section .container .contact_form .wpcf7-form input,
-.contact_section .container .contact_form .wpcf7-form textarea,
-.contact_section .container .contact_form .wpcf7-form select {
-    all: unset;
-    width: 100%;
-    border: 1px solid #E8DCC6;
-    padding: 10px;
+.contact_section .container .contact_form form .contact_form_label span input {
+    width: 504px;
+    height: 56px;
     border-radius: 8px;
-    background: #F7F7F6;
+    border-width: 1px;
+    padding-left: 16px;
 
+    border: 1px solid #E8DCC6;
+    margin-top: 13px;
 }
-
-.contact_section .container .contact_form .wpcf7-form textarea {
-
+.contact_section .container .contact_form form .contact_form_label span textarea {
+    width: 504px;
     height: 143px;
+    border-radius: 8px;
+    border-width: 1px;
+    padding-left: 16px;
 
+    border: 1px solid #E8DCC6;
+    margin-top: 13px;
 }
-
-
-
-.contact_section .container .contact_form .wpcf7-form input[type="submit"] {
+.contact_section .container .contact_form form input[type="submit"] {
     all: unset;
     font-family: 'Cabin', serif;
     background: var(--yellow_background);
@@ -1542,29 +1578,7 @@ footer .footer_bottom .social_links a .social_icon {
     width: 78px;
     text-align: center;
 }
-
-
-
-.contact_section .container .contact_form .wpcf7-form input[type="submit"]:hover {
+.contact_section .container .contact_form form input[type="submit"]:hover {
     background: var(--yellow_background);
-
 }
 
-
-.wpcf7-not-valid-tip {
-    display: none !important;
-}
-
-
-.wpcf7-form-control.wpcf7-not-valid {
-    border: 1px solid red !important;
-}
-
-.wpcf7-form p {
-    margin-bottom: 24px;
-}
-
-.wpcf7-form p label {
-    margin-bottom: 13px;
-} 
-    */
