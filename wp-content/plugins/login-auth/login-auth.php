@@ -12,97 +12,54 @@ Version: 1.0.0
 Author URI: http://smhasib.com/
 */
 
-
-function login_auth_enqueue_scripts() {
-    // Enqueue the JS file for the login page
-    wp_enqueue_script(
-        'login-auth-js', // Handle (unique name for the script)
-        plugin_dir_url(__FILE__) . 'js/login-auth.js', // Path to the JS file
-        array('jquery'), // Optional: Dependencies (jQuery is a dependency here)
-        null, // Version (optional, can use a version number)
-        true // Load in the footer
-    );
-
-    // Localize the script to pass the AJAX URL to JS
-    wp_localize_script('login-auth-js', 'ajaxurl', admin_url('admin-ajax.php'));
+// Hook into login authentication
+add_filter('authenticate', 'login_auth_verify_credentials', 30, 3);
+function login_auth_verify_credentials($user, $username, $password) {
+    if (is_wp_error($user)) {
+        return $user;
+    }
+    
+    // Generate OTP
+    $otp = wp_rand(100000, 999999);
+    update_user_meta($user->ID, 'login_auth_otp', $otp);
+    update_user_meta($user->ID, 'login_auth_otp_expiry', time() + 300);
+    
+    // Send OTP via email
+    $email = $user->user_email;
+    $subject = 'Your Login OTP';
+    $message = "Your OTP for login is: $otp. It will expire in 5 minutes.";
+    wp_mail($email, $subject, $message);
+    
+    // Show OTP input field
+    add_action('login_enqueue_scripts','hideloginform');
+    add_action('login_form_middle', 'login_auth_otp_field');
+    return new WP_Error('authentication_required', __('OTP sent to your email. Enter OTP to continue.'));
 }
-add_action('login_enqueue_scripts', 'login_auth_enqueue_scripts');
-
-
-
-function my_added_login_field() {
-    ?>
-    <p>
-        <input type="button" value="Send OTP" class="button-primary" name="send_otp_btn" id="send_otp_btn" onclick="send_otp_btn()">
-        <label for="otp_field">OTP<br> 
-        <input type="text" tabindex="20" size="20" value="" class="input" id="otp_field" name="otp_field"></label> 
-    </p>
-    <?php
+function hideloginform(){
+    echo '<style>#loginform {display:none !important}</style>';
+  }
+// OTP input field
+function login_auth_otp_field() {
+    return '<p><label for="otp_field">OTP<br>
+        <input type="text" name="otp_field" id="otp_field" class="input" size="20"></label></p>';
 }
-add_action('login_form', 'my_added_login_field');
 
-
-function get_user_by_username_or_email($input) {
-    if (strpos($input, '@') !== false) {
-        return get_user_by('email', $input);
+// Verify OTP
+add_filter('wp_authenticate_user', 'login_auth_check_otp', 30, 2);
+function login_auth_check_otp($user, $password) {
+    if (!isset($_POST['otp_field'])) {
+        return $user;
+    }
+    
+    $otp_entered = sanitize_text_field($_POST['otp_field']);
+    $otp_stored = get_user_meta($user->ID, 'login_auth_otp', true);
+    $otp_expiry = get_user_meta($user->ID, 'login_auth_otp_expiry', true);
+    
+    if ($otp_stored && $otp_stored == $otp_entered && time() < $otp_expiry) {
+        delete_user_meta($user->ID, 'login_auth_otp');
+        delete_user_meta($user->ID, 'login_auth_otp_expiry');
+        return $user;
     } else {
-        return get_user_by('login', $input);
+        return new WP_Error('invalid_otp', __('Invalid or expired OTP. Please try again.'));
     }
 }
-
-
-function generate_and_send_otp() {
-        
-        if (!empty($_POST['log']) || !empty($_POST['pwd']) ) {
-            $input = sanitize_text_field($_POST['log']);
-            $user = get_user_by_username_or_email($input);
-            
-            if ($user) {
-                // $otp = wp_rand(100000, 999999);     
-                $otp = 123456;     
-                update_user_meta($user->ID, 'my_login_otp', $otp);
-                    
-                
-                $subject = "Your OTP for Login";
-                $message = "Hello " . $user->display_name . ",\n\nYour OTP for login is: " . $otp . "\n\nUse this to complete your login.";
-                $headers = "From: no-reply@yourdomain.com";
-                
-                wp_mail($user->user_email, $subject, $message, $headers);
-            }
-        }
-    // }
-}
-add_action('login_init', 'generate_and_send_otp');
-
-
-function my_custom_authenticate($user, $username, $password) {
-   
-    $otp_value = isset($_POST['otp_field']) ? sanitize_text_field($_POST['otp_field']) : '';
-    
-
-    $user = get_user_by_username_or_email($username);
-    
-    if (!$user) {
-        return new WP_Error('invalid_username', __("<strong>ERROR</strong>: Invalid username or email."));
-    }
-
-  
-    $stored_otp = get_user_meta($user->ID, 'my_login_otp', true);
-    
-    if (empty($otp_value) || $otp_value !== $stored_otp) {
-        remove_action('authenticate', 'wp_authenticate_username_password', 20);
-        remove_action('authenticate', 'wp_authenticate_email_password', 20);
-        
-        return new WP_Error('denied', __("<strong>ERROR</strong>: Incorrect OTP."));
-    }
-    
-  
-    delete_user_meta($user->ID, 'my_login_otp');
-    
-    return $user;
-}
-add_filter('authenticate', 'my_custom_authenticate', 10, 3);
-
-
-
-

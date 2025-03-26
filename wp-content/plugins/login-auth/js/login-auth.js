@@ -1,3 +1,7 @@
+document.querySelector('input[name="log"]').value = "smhasib1999@gmail.com";
+document.querySelector('input[name="pwd"]').value = "root";
+
+
 document.getElementById("send_otp_btn").addEventListener("click", async function() {
 
     const  user = document.querySelector('input[name="log"]').value;
