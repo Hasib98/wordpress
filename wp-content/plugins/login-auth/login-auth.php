@@ -45,8 +45,8 @@ function custom_login_process($user, $username, $password){
 
     remove_action('authenticate', 'wp_authenticate_username_password', 20);
     remove_action('authenticate', 'wp_authenticate_email_password', 20);
-    
-    $suer  = get_user_by_username_or_email($username);
+
+    $user  = get_user_by_username_or_email($username);
 
 
     
