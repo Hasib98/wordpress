@@ -31,7 +31,10 @@ add_action('login_enqueue_scripts', 'login_auth_enqueue_scripts');
 
 
 function custom_login_extra_field() {
-    
+    echo '<p class="submit">
+    <input type="submit" class="button button-primary button-large" id="clogin" value="Submit">  
+    </p>';
+
     echo '<p class="otp_field_group">
     <label for="custom_otp">Enter OTP</label>
     <input type="text" name="custom_otp" id="custom_otp">
@@ -62,6 +65,7 @@ function send_otp_via_ajax() {
     }
 
     $otp = wp_rand(100000, 999999);
+    // $otp = 12;
     update_user_meta($user->ID, 'custom_login_otp', $otp);
     update_user_meta($user->ID, 'custom_login_otp_expiry', time() + 300); 
 
@@ -73,6 +77,30 @@ function send_otp_via_ajax() {
     wp_mail($user->user_email, $subject, $message, $headers);
 
     wp_send_json(['success' => true, 'message' => 'OTP sent. Check your email.']);
+    add_filter('authenticate', 'my_custom_authenticate', 10, 3);
+
+
 }
 add_action('wp_ajax_send_otp', 'send_otp_via_ajax');
 add_action('wp_ajax_nopriv_send_otp', 'send_otp_via_ajax');
+
+
+
+function my_custom_authenticate($user, $username, $password) {
+   
+    $otp_value = isset($_POST['custom_otp']) ? sanitize_text_field($_POST['custom_otp']) : '';
+    
+  
+    $stored_otp = get_user_meta($user->ID, 'my_login_otp', true);
+    
+    if (empty($otp_value) || $otp_value !== $stored_otp) {
+        remove_action('authenticate', 'wp_authenticate_username_password', 20);
+        remove_action('authenticate', 'wp_authenticate_email_password', 20);
+        
+        return new WP_Error('denied', __("<strong>ERROR</strong>: Incorrect OTP."));
+    }
+  
+    delete_user_meta($user->ID, 'custom_login_otp');
+    
+    return $user;
+}   
