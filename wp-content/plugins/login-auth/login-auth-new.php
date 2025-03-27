@@ -61,9 +61,7 @@ function send_otp_via_ajax() {
         wp_die();
     }
 
-
-
-/*     $otp = wp_rand(100000, 999999);
+    $otp = wp_rand(100000, 999999);
     update_user_meta($user->ID, 'custom_login_otp', $otp);
     update_user_meta($user->ID, 'custom_login_otp_expiry', time() + 300); 
 
@@ -72,7 +70,7 @@ function send_otp_via_ajax() {
     $message = "Your OTP for login is: $otp. It expires in 5 minutes.";
     $headers = array('Content-Type: text/html; charset=UTF-8');
 
-    wp_mail($user->user_email, $subject, $message, $headers); */
+    wp_mail($user->user_email, $subject, $message, $headers);
 
     wp_send_json(['success' => true, 'message' => 'OTP sent. Check your email.']);
 }
