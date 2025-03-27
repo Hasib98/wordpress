@@ -36,7 +36,7 @@ function custom_login_extra_field() {
     </p>';
 
     echo '<p class="otp_field_group">
-    <label for="custom_otp">Enter OTP</label>
+    <label for="custom_otp"><span id="label_text">Enter OTP </span><span id="countdown">5:00</span></label>
     <input type="text" name="custom_otp" id="custom_otp">
     </p>';
     // echo '<script>
@@ -60,14 +60,15 @@ function send_otp_via_ajax() {
     // Authenticate user
     $user = wp_authenticate($username, $password);
     if (is_wp_error($user)) {
-        wp_send_json(['success' => false, 'message' => 'Invalid username or password.']);
+        wp_send_json(['success' => false, 'message' => $user->get_error_message()]);
         wp_die();
     }
 
-    $otp = wp_rand(100000, 999999);
+    $otp = wp_rand(100000,999999);
+    $otp_time_countdown  = 300;
     // $otp = 12;
     update_user_meta($user->ID, 'custom_login_otp', $otp);
-    update_user_meta($user->ID, 'custom_login_otp_expiry', time() + 300); 
+    update_user_meta($user->ID, 'custom_login_otp_expiry', time() + $otp_time_countdown); 
 
 
     $subject = "Your OTP Code";
@@ -76,31 +77,53 @@ function send_otp_via_ajax() {
 
     wp_mail($user->user_email, $subject, $message, $headers);
 
-    wp_send_json(['success' => true, 'message' => 'OTP sent. Check your email.']);
-    add_filter('authenticate', 'my_custom_authenticate', 10, 3);
-
+    wp_send_json(['success' => true, 'message' => 'OTP sent. Check your email.', 'countdown' => $otp_time_countdown]);
+    
 
 }
 add_action('wp_ajax_send_otp', 'send_otp_via_ajax');
 add_action('wp_ajax_nopriv_send_otp', 'send_otp_via_ajax');
 
-
-
-function my_custom_authenticate($user, $username, $password) {
-   
-    $otp_value = isset($_POST['custom_otp']) ? sanitize_text_field($_POST['custom_otp']) : '';
-    
-  
-    $stored_otp = get_user_meta($user->ID, 'my_login_otp', true);
-    
-    if (empty($otp_value) || $otp_value !== $stored_otp) {
-        remove_action('authenticate', 'wp_authenticate_username_password', 20);
-        remove_action('authenticate', 'wp_authenticate_email_password', 20);
-        
-        return new WP_Error('denied', __("<strong>ERROR</strong>: Incorrect OTP."));
+// -----------------------------------------------------------------------------------------------------
+function otp_validation_via_ajax() {
+    if (!isset($_POST['username']) || !isset($_POST['password'])|| !isset($_POST['otp'])) {
+        wp_send_json(['success' => false, 'message' => 'Invalid request.']);
     }
-  
-    delete_user_meta($user->ID, 'custom_login_otp');
+
+    $username = sanitize_text_field($_POST['username']);
+    $password = sanitize_text_field($_POST['password']);
+    $otp_value =  sanitize_text_field($_POST['otp']);
+
+    // Authenticate user
+    $user = wp_authenticate($username, $password);
+    if (is_wp_error($user)) {
+        wp_send_json(['success' => false, 'message' => 'Invalid username or password.']);
+        wp_die();
+    }
+
+    $stored_otp = get_user_meta($user->ID, 'custom_login_otp', true);
+    $otp_expiry = get_user_meta($user->ID, 'custom_login_otp_expiry', true);
+
     
-    return $user;
-}   
+    // Validate OTP
+    if ( $otp_value != $stored_otp  || time() > $otp_expiry) {
+        wp_send_json(['success' => false, 'message' => 'Invalid OTP.']);
+        wp_die();
+        exit;
+    }
+    
+    // Clear OTP after successful authentication
+    delete_user_meta($user->ID, 'custom_login_otp');
+    delete_user_meta($user->ID, 'custom_login_otp_expiry');
+        
+    wp_set_current_user($user->ID);
+    wp_set_auth_cookie($user->ID);
+    do_action('wp_login', $user->user_login, $user);
+
+
+    wp_send_json(['success' => true, 'redirect' => admin_url()]);
+    
+
+}
+add_action('wp_ajax_otp_validation', 'otp_validation_via_ajax');
+add_action('wp_ajax_nopriv_otp_validation', 'otp_validation_via_ajax');
