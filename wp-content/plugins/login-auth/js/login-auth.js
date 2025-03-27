@@ -1,40 +1,43 @@
-document.querySelector('input[name="log"]').value = "smhasib1999@gmail.com";
-document.querySelector('input[name="pwd"]').value = "root";
+document.addEventListener("DOMContentLoaded", function () {
+    let usernameField = document.querySelector("#user_login");
+    let passwordField = document.querySelector("#user_pass");
+    let submitButton = document.querySelector("#wp-submit");
+    
+    let otp_field_group = document.querySelector(".otp_field_group");
+    otp_field_group.style.display = "none";
 
-
-document.getElementById("send_otp_btn").addEventListener("click", async function() {
-
-    const  user = document.querySelector('input[name="log"]').value;
-    const  pass = document.querySelector('input[name="pwd"]').value;
-    alert("send_otp_btn_clicked" + user + pass );
-
-    let formData = new FormData();
-    formData.append('user_id_email', user);
-    formData.append('pass', pass);
-    formData.append('action', 'send_otp');
-
-    document.getElementById("send_otp_btn").disabled = true;
-
-    // ✅ Send data using fetch
-    try {
-        const response = await fetch(ajax_object.ajax_url, {
-            method: "POST",
-            body: formData
+    if(otp_field_group.style.display === "none"){
+        
+        submitButton.addEventListener("click", async function (e) {
+                e.preventDefault(); // Prevent normal login form submission
+                let formData = new FormData();
+                formData.append("action", "send_otp");
+                formData.append("username", usernameField.value);
+                formData.append("password", passwordField.value);
+    
+                try {
+                    let response = await fetch(ajax_object.ajax_url, {
+                        method: "POST",
+                        body: formData
+                    });
+    
+                    let result = await response.json();
+    
+                    if (result.success) {
+                        // usernameField.parentElement.style.display = "hidden";
+                        // passwordField.parentElement.style.display = "hidden";
+                        otp_field_group.style.display = "block";
+    
+                    } else {
+                        console.log( result.message);
+                        otp_field_group.style.display = "none";
+    
+                    }
+                } catch (error) {
+                    console.error("Error:", error);
+                }
+            
         });
-
-        const data = await response.json();
-
-        if (data.success) {
-            console.log("Server Response:", data);
-            alert("Reservation submitted successfully!");
-        } else {
-            alert(data.message);
-        }
-    } catch (error) {
-        console.error("Error:", error);
-        alert("An error occurred. Please try again.");
     }
-    document.getElementById("send_otp_btn").disabled = false;
-
-
+    
 });

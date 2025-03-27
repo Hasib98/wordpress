@@ -1,18 +1,4 @@
 <?php
-/**
- * @package Login_Auth
- * @version 1.0.0
- */
-/*
-Plugin Name: Login Auth
-Plugin URI: http://wordpress.org/plugins/login-auth/
-Description: A simple WordPress login authentication plugin with OTP.
-Author: S. M. Hasib
-Version: 1.0.0
-Author URI: http://smhasib.com/
-*/
-
-
 function login_auth_enqueue_scripts() {
 
     wp_enqueue_script(
