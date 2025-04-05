@@ -9,7 +9,9 @@ function indian_resturant_register_style()
         // array(),
         array(
             'bootstrap-style',
-            'swiper-style'
+            'swiper-style',
+            'fancybox-style'
+
         ),
         filemtime(get_template_directory() . '/assets/css/indian-resturant-custom.css'),
         'all'
@@ -30,8 +32,14 @@ function indian_resturant_register_style()
         '1,0,0',
         'all'
     );
-wp_dequeue_style( 'contact-form-7' );
-
+    wp_enqueue_style(
+        'fancybox-style',
+        'https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css',
+        array(),
+        '1,0,0',
+        'all'
+    );
+    wp_dequeue_style('contact-form-7');
 }
 
 add_action('wp_enqueue_scripts', 'indian_resturant_register_style');
@@ -43,6 +51,8 @@ function indian_resturant_register_scripts()
     wp_enqueue_script('indian-resturant-main-extra', get_template_directory_uri() . '/assets/js/main.js', array('jquery'), '1.0.0', true);
     wp_localize_script('indian-resturant-main', 'ajax_object', array('ajax_url' => admin_url('admin-ajax.php')));
     wp_enqueue_script('swiper-js', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js', array(), '1.0.0', true);
+    wp_enqueue_script('fancybox-slider', get_template_directory_uri() . '/assets/js/cs_slider.js', array('fancybox-js'), '1.0.0', true);
+    wp_enqueue_script('fancybox-js', 'https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js', array(), '1.0.0', true);
 }
 
 add_action('wp_enqueue_scripts', 'indian_resturant_register_scripts');

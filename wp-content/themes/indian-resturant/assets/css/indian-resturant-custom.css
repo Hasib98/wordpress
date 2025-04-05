@@ -1582,3 +1582,27 @@ footer .footer_bottom .social_links a .social_icon {
     background: var(--yellow_background);
 }
 
+
+
+
+/* ----------------------------------------
+
+***********image slider***********
+
+------------------------------------------- */
+
+.image-container {
+    position: relative;
+    display: inline-block;
+}
+
+.watermark {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    opacity: 0.7;
+    pointer-events: none; /* Prevent interaction with the watermark */
+}
