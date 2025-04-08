@@ -16,11 +16,14 @@
 // autoplay.stop();
 
 // });
+    
+
+
 
 Fancybox.bind('[data-fancybox="gallery"]', {
     //
     // hideScrollbar: false,
-    dragToClose: false,
+    // dragToClose: false,
     Toolbar: {
         items: {
             facebook: {
@@ -44,6 +47,9 @@ Fancybox.bind('[data-fancybox="gallery"]', {
     },
 });
 
+
+
+
 /*   download: {
     tpl: '<a class="f-button" title="{{DOWNLOAD}}" data-fancybox-download href="javasript:;"><svg><path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2M7 11l5 5 5-5M12 4v12"/></svg></a>',
     click: (fancybox, slide) => {
@@ -64,47 +70,43 @@ Fancybox.bind('[data-fancybox="gallery"]', {
       },
 }, */
 
-document.addEventListener("DOMContentLoaded", function () {
-    const mainImageSrc = "<?php echo get_template_directory_uri(); ?>/assets/images/test.jpg";
-    const watermarkSrc = "<?php echo get_template_directory_uri(); ?>/assets/images/watermark.png";
-    const fancyLink = document.getElementById("watermarked-link");
 
-    Promise.all([loadImage(mainImageSrc), loadImage(watermarkSrc)])
-        .then(([mainImg, watermarkImg]) => {
-            const canvas = document.createElement("canvas");
-            canvas.width = mainImg.width;
-            canvas.height = mainImg.height;
+window.onload = function () {
+    const anchor = document.getElementById("fancyAnchor");
+    const img = document.getElementById("fancyImage");
 
-            const ctx = canvas.getContext("2d");
-            ctx.drawImage(mainImg, 0, 0);
+    const originalSrc = anchor.getAttribute("data-src");
+    console.log(anchor,);
+    console.log(img);
+    console.log(originalSrc);
 
-            const posX = canvas.width - watermarkImg.width - 10;
-            const posY = canvas.height - watermarkImg.height - 10;
+    const image = new Image();
+    image.crossOrigin = "anonymous"; // Required for loading external images into canvas
+    image.src = originalSrc;
 
-            ctx.drawImage(watermarkImg, posX, posY);
 
-            const base64 = canvas.toDataURL("image/jpeg");
+    image.onload = function () {
+        const canvas = document.createElement("canvas");
+        canvas.width = image.width;
+        canvas.height = image.height;
+        console.log(canvas)
 
-            // Set base64 as data-src
-            fancyLink.setAttribute("data-src", base64);
+        const ctx = canvas.getContext("2d");
 
-            // Optional: Open Fancybox on click after it's ready
-            fancyLink.addEventListener("click", function (e) {
-                e.preventDefault();
-                Fancybox.show([{ src: base64, type: "image" }]);
-            });
-        })
-        .catch((err) => {
-            console.error("Image load error:", err);
-        });
 
-    function loadImage(src) {
-        return new Promise((resolve, reject) => {
-            const img = new Image();
-            img.crossOrigin = "anonymous"; // Only needed if image is from another domain and allows CORS
-            img.onload = () => resolve(img);
-            img.onerror = () => reject(new Error("Image load failed: " + src));
-            img.src = src;
-        });
-    }
-});
+        ctx.drawImage(image, 0, 0);
+
+        // Add watermark text
+        ctx.font = "80px sans-serif";
+        ctx.fillStyle = "#ffffff";
+        ctx.textAlign = "right";
+        ctx.fillText("Watermark", canvas.width - 20, canvas.height - 20);
+
+        // Get new data URL from canvas
+        const watermarkedDataUrl = canvas.toDataURL("image/png");
+
+        // Update both the img src and anchor data-src
+        img.src = watermarkedDataUrl;
+        anchor.setAttribute("data-src", watermarkedDataUrl);
+    };
+};
