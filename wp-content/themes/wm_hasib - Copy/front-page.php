@@ -73,17 +73,24 @@
     <section class="section_ceo">
         <div class="counter">
             <div class="count">
-                <h1>200<span>+</span> </h1>
+                <div>
+                    <span class="count_value">200</span><span>+</span>
+                </div>
                 <p class="grey_paragraph">Projects Completed</p>
             </div>
             <div class="count">
-                <h1>200<span>+</span> </h1>
+                <div>
+                    <span class="count_value">120</span><span>+</span>
+                </div>
                 <p class="grey_paragraph">Projects Completed</p>
             </div>
             <div class="count">
-                <h1>200<span>+</span> </h1>
+                <div>
+                    <span class="count_value">150</span><span>+</span>
+                </div>
                 <p class="grey_paragraph">Projects Completed</p>
             </div>
+
         </div>
         <div class="ceo_quotes">
             <div class="quote">“This is the best place to get your <span>website, software or mobile apps developed. Or
@@ -132,17 +139,105 @@
 
     <section class='section_case_studies'>
         <div class="container">
-            <div class="case_card">
-                <img src="<?php echo get_template_directory_uri(  ).'/assets/images/case_1.png'?>" alt="">
-                <div>
-                    <div>Website</div>
-                    <div>Wordpress</div>
+            <h1 class="section_head">Case Studies</h1>
+            <p class="section_description">From designs to marketing, Webermelon serves all digital services
+                your business needs to start and be succeeded</p>
+
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="case_card">
+                            <img src="<?php echo get_template_directory_uri(  ).'/assets/images/case_1.png'?>" alt="">
+                            <div class="chips">
+                                <div class="chip">Website</div>
+                                <div class="chip">Wordpress</div>
+                            </div>
+                            <h1>Web Application Development</h1>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="case_card">
+                            <img src="<?php echo get_template_directory_uri(  ).'/assets/images/case_2.png'?>" alt="">
+                            <div class="chips">
+                                <div class="chip">Website</div>
+                                <div class="chip">Wordpress</div>
+                            </div>
+                            <h1>Web Application Development</h1>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="case_card">
+                            <img src="<?php echo get_template_directory_uri(  ).'/assets/images/case_2.png'?>" alt="">
+                            <div class="chips">
+                                <div class="chip">Website</div>
+                                <div class="chip">Wordpress</div>
+                            </div>
+                            <h1>Web Application Development</h1>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="case_card">
+                            <img src="<?php echo get_template_directory_uri(  ).'/assets/images/case_1.png'?>" alt="">
+                            <div class="chips">
+                                <div class="chip">Website</div>
+                                <div class="chip">Wordpress</div>
+                            </div>
+                            <h1>Web Application Development</h1>
+                        </div>
+                    </div>
                 </div>
-                <div>Web Application Development</div>
             </div>
+
 
         </div>
     </section>
+    <section class="section_loop_carousel">
+        <div class="carousel_content">
+            <div class="bullet"></div>
+            <div class="text">MongoDB</div>
+        </div>
+        <div class="carousel_content">
+            <div class="bullet"></div>
+            <div class="text">MongoDB</div>
+        </div>
+        <div class="carousel_content">
+            <div class="bullet"></div>
+            <div class="text">MongoDB</div>
+        </div>
+        <div class="carousel_content">
+            <div class="bullet"></div>
+            <div class="text">MongoDB</div>
+        </div>
+        <div class="carousel_content">
+            <div class="bullet"></div>
+            <div class="text">MongoDB</div>
+        </div>
+        <div class="carousel_content">
+            <div class="bullet"></div>
+            <div class="text">MongoDB</div>
+        </div>
+        <div class="carousel_content">
+            <div class="bullet"></div>
+            <div class="text">MongoDB</div>
+        </div>
+        <div class="carousel_content">
+            <div class="bullet"></div>
+            <div class="text">MongoDB</div>
+        </div>
+    </section>
+
+
+
+
+
+    <section class="section_testimonial">
+        <div class="container">
+            <h1 class="section_head">Testimonial</h1>
+            <p class="section_description">From designs to marketing, Webermelon serves all digital services
+                your business needs to start and be succeeded</p>
+
+    </section>
+
 
 
     <?php wp_footer(  );?>

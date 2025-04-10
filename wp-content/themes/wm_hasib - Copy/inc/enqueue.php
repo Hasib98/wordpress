@@ -1,7 +1,16 @@
 <?php  
 
 function webermelon_scripts() {
-    wp_enqueue_style( 'wm_style', get_template_directory_uri().'/assets/css/wm_style.css', array('swiper-style'), filemtime(get_template_directory(  ).'/assets/css/wm_style.css'),'all');
+    
+    $bootstrap_css = get_template_directory_uri() . '/assets/css/bootstrap.css';
+    wp_enqueue_style(
+        'bootstrap-style',
+        $bootstrap_css,
+        array(),
+        '5,3,3',
+        'all'
+    );
+    wp_enqueue_style( 'wm_style', get_template_directory_uri().'/assets/css/wm_style.css', array('swiper-style','bootstrap-style'), filemtime(get_template_directory(  ).'/assets/css/wm_style.css'),'all');
     wp_enqueue_style(
         'swiper-style',
         'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css',
