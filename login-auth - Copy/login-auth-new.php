@@ -11,7 +11,7 @@ Author: S. M. Hasib
 Version: 1.0.0
 Author URI: http://smhasib.com/
 */
-if (!defined('ABSPATH')) exit; 
+if (!defined('ABSPATH')) exit; // Exit if accessed directly
 
 function login_auth_enqueue_scripts() {
 
@@ -40,7 +40,11 @@ function custom_login_extra_field() {
     <label for="custom_otp"><span id="label_text">Enter OTP </span><span id="countdown">5:00</span></label>
     <input type="text" name="custom_otp" id="custom_otp">
     </p>';
-
+    // echo '<script>
+    // document.getElementById("user_login").parentElement.style.display = "none";
+    // document.querySelector(".user-pass-wrap").style.display = "none";
+    // document.querySelector(".forgetmenot").style.display = "none";
+    // </script>';
 }
 
 add_action('login_form', 'custom_login_extra_field');
@@ -54,6 +58,14 @@ function send_otp_via_ajax() {
     $username = sanitize_text_field($_POST['username']);
     $password = sanitize_text_field($_POST['password']);
 
+    // if(!isset($_POST['data'])){
+    //     wp_send_json(['success' => false, 'message' => 'Invalid request.']);
+    // }
+    // // $data = json_decode($_POST['data']); 
+    // $data = $_POST['data']; 
+
+    // $username = sanitize_text_field($data->username);
+    // $password = sanitize_text_field($data->password);
 
     // Authenticate user
     $user = wp_authenticate($username, $password);
@@ -87,6 +99,17 @@ function otp_validation_via_ajax() {
     if (!isset($_POST['username']) || !isset($_POST['password'])|| !isset($_POST['otp'])) {
         wp_send_json(['success' => false, 'message' => 'Invalid request.']);
     }
+    
+    // if(!isset($_POST['data'])){
+    //     wp_send_json(['success' => false, 'message' => 'Invalid request.']);
+    // }
+    // $data = json_decode($_POST['data']); 
+
+    // $username = sanitize_text_field($data->username);
+    // $password = sanitize_text_field($data->password);
+    // $remember = isset($data->rememberme) && $data->rememberme === 'forever';
+
+    // $otp_value =  sanitize_text_field($data->otp);
 
     
     $username = sanitize_text_field($_POST['username']);
