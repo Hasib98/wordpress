@@ -38,7 +38,7 @@
                 </div>
             </div>
 
-            <div class="swiper hero_swiper">
+            <!-- <div class="swiper hero_swiper">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
                         <img src="<?php echo get_template_directory_uri(  ).'/assets/images/img_left.png'?>  " alt="">
@@ -63,6 +63,24 @@
                     </div>
 
                 </div>
+            </div> -->
+            <div class="swiper swiper-slider">
+                <div class="swiper-wrapper">
+                    <img class="swiper-slide"
+                        src="<?php echo get_template_directory_uri(  ).'/assets/images/img_left.png'?> " alt="Swiper">
+                    <img class="swiper-slide"
+                        src="<?php echo get_template_directory_uri(  ).'/assets/images/img_middle.png'?> " alt="Swiper">
+                    <img class="swiper-slide"
+                        src="<?php echo get_template_directory_uri(  ).'/assets/images/img_right.png'?> " alt="Swiper">
+                    <img class="swiper-slide"
+                        src="<?php echo get_template_directory_uri(  ).'/assets/images/img_left.png'?> " alt="Swiper">
+                    <img class="swiper-slide"
+                        src="<?php echo get_template_directory_uri(  ).'/assets/images/img_middle.png'?> " alt="Swiper">
+                    <img class="swiper-slide"
+                        src="<?php echo get_template_directory_uri(  ).'/assets/images/img_right.png'?> " alt="Swiper">
+
+                </div>
+
             </div>
 
 
@@ -235,8 +253,120 @@
             <h1 class="section_head">Testimonial</h1>
             <p class="section_description">From designs to marketing, Webermelon serves all digital services
                 your business needs to start and be succeeded</p>
+            <div class="slider"></div>
 
     </section>
+
+    <section class="section_start_project">
+        <div class="container">
+            <div class="text_container">
+                <h1>Accelerate Your Software Development Potential with Us</h1>
+                <p>With our innovative solutions and dedicated expertise, success is a guaranteed outcome. Let's
+                    accelerate together towards your goals and beyond.</p>
+                <button>Start your project -></button>
+            </div>
+            <div class="image_wrapper">
+                <img src=" <?php echo get_template_directory_uri(  ).'/assets/images/img_right.png'?> " alt="">
+            </div>
+
+            <div class="left_line"></div>
+            <div class="top_line"></div>
+            <div class="bottom_line"></div>
+            <div class="right_line"></div>
+
+        </div>
+
+
+    </section>
+
+
+
+    <section class="section slider-section">
+        <div class="container slider-column">
+            <div class="swiper swiper-slider">
+                <div class="swiper-wrapper">
+                    <img class="swiper-slide"
+                        src="https://cdn.pixabay.com/photo/2022/11/13/18/09/canyon-7589820_1280.jpg" alt="Swiper">
+                    <img class="swiper-slide"
+                        src="https://cdn.pixabay.com/photo/2022/11/02/22/33/autumn-7566201_1280.jpg" alt="Swiper">
+                    <img class="swiper-slide"
+                        src="https://cdn.pixabay.com/photo/2023/04/05/09/44/landscape-7901065_1280.jpg" alt="Swiper">
+                    <img class="swiper-slide"
+                        src="https://cdn.pixabay.com/photo/2020/09/04/16/18/mountains-5544365_1280.jpg" alt="Swiper">
+                    <img class="swiper-slide"
+                        src="https://cdn.pixabay.com/photo/2022/12/09/22/55/trees-7646226_1280.jpg" alt="Swiper">
+                    <img class="swiper-slide"
+                        src="https://cdn.pixabay.com/photo/2019/09/13/11/47/mountains-4473760_1280.jpg" alt="Swiper">
+                </div>
+
+            </div>
+        </div>
+    </section>
+    </main>
+
+
+
+
+
+
+    <footer>
+        <div class="container">
+            <div class="text_container">
+                <p class=" start_text">Let’s get start</p>
+                <h1><span>hi@</span>webermelon.com
+                </h1>
+                <div class="list_container">
+                    <div class="footer_list_container">
+                        <ul>
+                            <li>
+                                <p class="title">USA Address:</p>
+                                <p class="description">25108 Marguerite Pkwy Suite A-236 Mission Viejo Ca 92692</p>
+                            </li>
+                            <li>
+                                <p class="title">USA Address:</p>
+                                <p class="description">25108 Marguerite Pkwy Suite A-236 Mission Viejo Ca 92692</p>
+                            </li>
+                            <li>
+                                <p class="title">USA Address:</p>
+                                <p class="description">25108 Marguerite Pkwy Suite A-236 Mission Viejo Ca 92692</p>
+                            </li>
+
+                    </div>
+                    <div class="footer_list_container">
+                        <p class="title">Our Expertise</p>
+                        <ul>
+                            <li>Laravel Developer</li>
+                            <li>PHP Developer</li>
+                            <li>WordPress Theme Development</li>
+                            <li>MERN Stack Development</li>
+                            <li>WordPress Developer</li>
+                            <li>Software Developer</li>
+                            <li>Mobile App Developer</li>
+                            <li>Vue Js Developer</li>
+                            <li>Node Js Developer</li>
+                        </ul>
+
+                    </div>
+                </div>
+
+            </div>
+            <div class="texture_container">
+                <div class="rectangle"></div>
+                <div class="curvy">
+                    <div class="top_rectangle"></div>
+                    <div class="bottom_rectangle"></div>
+                </div>
+                <div class="rectangle"></div>
+                <div class="curvy">
+                    <div class="top_rectangle"></div>
+                    <div class="bottom_rectangle"></div>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+
+
 
 
 
