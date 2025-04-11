@@ -1,0 +1,37 @@
+sanitize_text_field()
+sanitize_textarea()
+
+esc_html()
+esc_attr()
+esc_url()
+
+
+nonce
+https://elements.envato.com/ambons-ambulance-service-html-template-A4Q77SA
+https://elements.envato.com/amcare-ambulance-service-html-template-EE5ZRW7
+https://www.jdomni.com/ecommerce-themes/ambulance-services-template
+https://www.pinterest.com/pin/649996158752189801/
+
+https://www.pinterest.com/pin/567312884328456053/
+
+https://www.pinterest.com/pin/4292562134456985/
+https://www.pinterest.com/pin/844493674616696/
+
+https://www.pinterest.com/pin/657525614377080290/
+    <!-- <nav>
+        <ul>
+            <li><a href="<?php echo home_url(); ?>">Home</a></li>
+            <li><?php echo get_field('menus', 'options') ?></li>
+
+
+
+            <li><a href="<?php echo get_template_directory_uri() . '/' . $string ?>">
+                    <?php echo ucwords($string); ?></a>
+            </li>
+            <!-- <li><a href="<?php echo get_template_directory_uri() . '/login' ?>">Login</a></li> -->
+
+
+
+
+    </ul>
+    </nav> -->
