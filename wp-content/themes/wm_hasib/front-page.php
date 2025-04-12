@@ -38,33 +38,8 @@
                 </div>
             </div>
 
-            <!-- <div class="swiper hero_swiper">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                        <img src="<?php echo get_template_directory_uri(  ).'/assets/images/img_left.png'?>  " alt="">
-                    </div>
-                    <div class="swiper-slide">
-                        <img src="<?php echo get_template_directory_uri(  ).'/assets/images/img_middle.png'?>  " alt="">
-                    </div>
-                    <div class="swiper-slide">
-                        <img src="<?php echo get_template_directory_uri(  ).'/assets/images/img_right.png'?>  " alt="">
-                    </div>
-                    <div class="swiper-slide">
-                        <img src="<?php echo get_template_directory_uri(  ).'/assets/images/img_right.png'?>  " alt="">
-                    </div>
-                    <div class="swiper-slide">
-                        <img src="<?php echo get_template_directory_uri(  ).'/assets/images/img_right.png'?>  " alt="">
-                    </div>
-                    <div class="swiper-slide">
-                        <img src="<?php echo get_template_directory_uri(  ).'/assets/images/img_right.png'?>  " alt="">
-                    </div>
-                    <div class="swiper-slide">
-                        <img src="<?php echo get_template_directory_uri(  ).'/assets/images/img_right.png'?>  " alt="">
-                    </div>
 
-                </div>
-            </div> -->
-            <div class="swiper swiper-slider">
+            <div class="swiper hero_swiper">
                 <div class="swiper-wrapper">
                     <img class="swiper-slide"
                         src="<?php echo get_template_directory_uri(  ).'/assets/images/img_left.png'?> " alt="Swiper">
@@ -78,13 +53,12 @@
                         src="<?php echo get_template_directory_uri(  ).'/assets/images/img_middle.png'?> " alt="Swiper">
                     <img class="swiper-slide"
                         src="<?php echo get_template_directory_uri(  ).'/assets/images/img_right.png'?> " alt="Swiper">
-
                 </div>
-
             </div>
 
-
         </div>
+
+
     </section>
 
 
@@ -108,7 +82,6 @@
                 </div>
                 <p class="grey_paragraph">Projects Completed</p>
             </div>
-
         </div>
         <div class="ceo_quotes">
             <div class="quote">“This is the best place to get your <span>website, software or mobile apps developed. Or
@@ -117,25 +90,61 @@
         <img src="<?php echo get_template_directory_uri(  ).'/assets/images/quotes.svg'?>  " alt="">
         <div class="ceo_name">Tanjil Ahmed Fahim</div>
         <p class="ceo_position">CEO - Webermelon</p>
+        <div class="logos">
+            <div class="logos-slide">
+                <img src="<?php echo get_template_directory_uri(  ).'/assets/images/cg.svg'?>" alt="">
+                <img src="<?php echo get_template_directory_uri(  ).'/assets/images/byteeat.svg'?>" alt="">
+                <img src="<?php echo get_template_directory_uri(  ).'/assets/images/droboai.svg'?>" alt="">
+                <img src="<?php echo get_template_directory_uri(  ).'/assets/images/tent.svg'?>" alt="">
+                <img src="<?php echo get_template_directory_uri(  ).'/assets/images/coople.svg'?>" alt="">
+            </div>
+            <div class="logos-slide">
+                <img src="<?php echo get_template_directory_uri(  ).'/assets/images/cg.svg'?>" alt="">
+                <img src="<?php echo get_template_directory_uri(  ).'/assets/images/byteeat.svg'?>" alt="">
+                <img src="<?php echo get_template_directory_uri(  ).'/assets/images/droboai.svg'?>" alt="">
+                <img src="<?php echo get_template_directory_uri(  ).'/assets/images/tent.svg'?>" alt="">
+                <img src="<?php echo get_template_directory_uri(  ).'/assets/images/coople.svg'?>" alt="">
+            </div>
 
-        <div class="sister_concerns">
-            <img src="<?php echo get_template_directory_uri(  ).'/assets/images/cg.svg'?>" alt="">
-            <img src="<?php echo get_template_directory_uri(  ).'/assets/images/byteeat.svg'?>" alt="">
-            <img src="<?php echo get_template_directory_uri(  ).'/assets/images/droboai.svg'?>" alt="">
-            <img src="<?php echo get_template_directory_uri(  ).'/assets/images/tent.svg'?>" alt="">
-            <img src="<?php echo get_template_directory_uri(  ).'/assets/images/coople.svg'?>" alt="">
         </div>
-
 
     </section>
 
     <section class="section_our_services">
         <div class="container">
             <div class="service_details">
-                <h1>Our Services</h1>
-                <p>From designs to marketing, Webermelon serves all digital services your business
-                    needs to start and be succeeded</p>
-                <button>Learn more</button>
+                <div class="heading_container">
+                    <h1>Our Services</h1>
+                    <p>From designs to marketing, Webermelon serves all digital services your business
+                        needs to start and be succeeded</p>
+                    <button>Learn more</button>
+                </div>
+
+                <div class="third_party_review">
+                    <p> 5 Star Recommended on Trustpilot</p>
+                    <div class="reviewer">
+                        <img src="<?php echo get_template_directory_uri(  ).'/assets/images/green_star.svg'  ?>" alt=""
+                            class="star">
+                        <div class="reviewer_org">Trustpilot</div>
+                        <div class="review_stars">
+                            <img class="white_star"
+                                src="<?php echo get_template_directory_uri(  ).'/assets/images/white_star.svg' ?>"
+                                alt="">
+                            <img class="white_star"
+                                src="<?php echo get_template_directory_uri(  ).'/assets/images/white_star.svg' ?>"
+                                alt="">
+                            <img class="white_star"
+                                src="<?php echo get_template_directory_uri(  ).'/assets/images/white_star.svg' ?>"
+                                alt="">
+                            <img class="white_star"
+                                src="<?php echo get_template_directory_uri(  ).'/assets/images/white_star.svg' ?>"
+                                alt="">
+                            <img class="white_star"
+                                src="<?php echo get_template_directory_uri(  ).'/assets/images/white_star.svg' ?>"
+                                alt="">
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <div class="service_card">
@@ -209,43 +218,65 @@
 
         </div>
     </section>
+
+
+
     <section class="section_loop_carousel">
-        <div class="carousel_content">
-            <div class="bullet"></div>
-            <div class="text">MongoDB</div>
+        <div class="logos-slide">
+            <div class="carousel_content">
+                <div class="bullet"></div>
+                <div class="text">MongoDB</div>
+            </div>
+            <div class="carousel_content">
+                <div class="bullet"></div>
+                <div class="text">Laravel</div>
+            </div>
+            <div class="carousel_content">
+                <div class="bullet"></div>
+                <div class="text">PHP</div>
+            </div>
+            <div class="carousel_content">
+                <div class="bullet"></div>
+                <div class="text">Wordpress</div>
+            </div>
+            <div class="carousel_content">
+                <div class="bullet"></div>
+                <div class="text">ReactJs</div>
+            </div>
+            <div class="carousel_content">
+                <div class="bullet"></div>
+                <div class="text">Flutter</div>
+            </div>
         </div>
-        <div class="carousel_content">
-            <div class="bullet"></div>
-            <div class="text">MongoDB</div>
+        <div class="logos-slide">
+            <div class="carousel_content">
+                <div class="bullet"></div>
+                <div class="text">MongoDB</div>
+            </div>
+            <div class="carousel_content">
+                <div class="bullet"></div>
+                <div class="text">Laravel</div>
+            </div>
+            <div class="carousel_content">
+                <div class="bullet"></div>
+                <div class="text">PHP</div>
+            </div>
+            <div class="carousel_content">
+                <div class="bullet"></div>
+                <div class="text">Wordpress</div>
+            </div>
+            <div class="carousel_content">
+                <div class="bullet"></div>
+                <div class="text">ReactJs</div>
+            </div>
+            <div class="carousel_content">
+                <div class="bullet"></div>
+                <div class="text">Flutter</div>
+            </div>
+
         </div>
-        <div class="carousel_content">
-            <div class="bullet"></div>
-            <div class="text">MongoDB</div>
-        </div>
-        <div class="carousel_content">
-            <div class="bullet"></div>
-            <div class="text">MongoDB</div>
-        </div>
-        <div class="carousel_content">
-            <div class="bullet"></div>
-            <div class="text">MongoDB</div>
-        </div>
-        <div class="carousel_content">
-            <div class="bullet"></div>
-            <div class="text">MongoDB</div>
-        </div>
-        <div class="carousel_content">
-            <div class="bullet"></div>
-            <div class="text">MongoDB</div>
-        </div>
-        <div class="carousel_content">
-            <div class="bullet"></div>
-            <div class="text">MongoDB</div>
-        </div>
+
     </section>
-
-
-
 
 
     <section class="section_testimonial">
@@ -253,9 +284,110 @@
             <h1 class="section_head">Testimonial</h1>
             <p class="section_description">From designs to marketing, Webermelon serves all digital services
                 your business needs to start and be succeeded</p>
-            <div class="slider"></div>
+            <div class="slider_container">
+                <div class="swiper test">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="testimonial_card gradient_background">
+                                <div class="avatar_container">
+                                    <img src="<?php  echo get_template_directory_uri(  ).'/assets/images/avatar.jpeg'?>"
+                                        alt="">
+                                </div>
+                                <h1>James Pattinson</h1>
+                                <p>CEO - StudioTEM</p>
+                                <div class="review_stars">
+                                    <div class="star"></div>
+                                    <div class="star"></div>
+                                    <div class="star"></div>
+                                    <div class="star"></div>
+                                    <div class="star"></div>
+                                </div>
+                                <p class="review_description">We have worked together during 2 full weeks in order
+                                    to migrate my ecommerce website
+                                    towards a new platform. Webermelon also custom coded a full secure platform for my
+                                    clients in order to improve customer experience after their orders. This was a
+                                    really difficult mission that he managed successfully !</p>
+                                <div class="view_review_link">View review on facebook -></div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="testimonial_card gradient_background">
+                                <div class="avatar_container">
+                                    <img src="<?php  echo get_template_directory_uri(  ).'/assets/images/avatar.jpeg'?>"
+                                        alt="">
+                                </div>
+                                <h1>James Pattinson</h1>
+                                <p>CEO - StudioTEM</p>
+                                <div class="review_stars">
+                                    <div class="star"></div>
+                                    <div class="star"></div>
+                                    <div class="star"></div>
+                                    <div class="star"></div>
+                                    <div class="star"></div>
+                                </div>
+                                <p class="review_description">We have worked together during 2 full weeks in order
+                                    to migrate my ecommerce website
+                                    towards a new platform. Webermelon also custom coded a full secure platform for my
+                                    clients in order to improve customer experience after their orders. This was a
+                                    really difficult mission that he managed successfully !</p>
+                                <div class="view_review_link">View review on facebook -></div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="testimonial_card gradient_background">
+                                <div class="avatar_container">
+                                    <img src="<?php  echo get_template_directory_uri(  ).'/assets/images/avatar.jpeg'?>"
+                                        alt="">
+                                </div>
+                                <h1>James Pattinson</h1>
+                                <p>CEO - StudioTEM</p>
+                                <div class="review_stars">
+                                    <div class="star"></div>
+                                    <div class="star"></div>
+                                    <div class="star"></div>
+                                    <div class="star"></div>
+                                    <div class="star"></div>
+                                </div>
+                                <p class="review_description">We have worked together during 2 full weeks in order
+                                    to migrate my ecommerce website
+                                    towards a new platform. Webermelon also custom coded a full secure platform for my
+                                    clients in order to improve customer experience after their orders. This was a
+                                    really difficult mission that he managed successfully !</p>
+                                <div class="view_review_link">View review on facebook -></div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="testimonial_card gradient_background">
+                                <div class="avatar_container">
+                                    <img src="<?php  echo get_template_directory_uri(  ).'/assets/images/avatar.jpeg'?>"
+                                        alt="">
+                                </div>
+                                <h1>James Pattinson</h1>
+                                <p>CEO - StudioTEM</p>
+                                <div class="review_stars">
+                                    <div class="star"></div>
+                                    <div class="star"></div>
+                                    <div class="star"></div>
+                                    <div class="star"></div>
+                                    <div class="star"></div>
+                                </div>
+                                <p class="review_description">We have worked together during 2 full weeks in order
+                                    to migrate my ecommerce website
+                                    towards a new platform. Webermelon also custom coded a full secure platform for my
+                                    clients in order to improve customer experience after their orders. This was a
+                                    really difficult mission that he managed successfully !</p>
+                                <div class="view_review_link">View review on facebook -></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
 
     </section>
+
+
+
 
     <section class="section_start_project">
         <div class="container">
@@ -281,28 +413,63 @@
 
 
 
-    <section class="section slider-section">
-        <div class="container slider-column">
-            <div class="swiper swiper-slider">
-                <div class="swiper-wrapper">
-                    <img class="swiper-slide"
-                        src="https://cdn.pixabay.com/photo/2022/11/13/18/09/canyon-7589820_1280.jpg" alt="Swiper">
-                    <img class="swiper-slide"
-                        src="https://cdn.pixabay.com/photo/2022/11/02/22/33/autumn-7566201_1280.jpg" alt="Swiper">
-                    <img class="swiper-slide"
-                        src="https://cdn.pixabay.com/photo/2023/04/05/09/44/landscape-7901065_1280.jpg" alt="Swiper">
-                    <img class="swiper-slide"
-                        src="https://cdn.pixabay.com/photo/2020/09/04/16/18/mountains-5544365_1280.jpg" alt="Swiper">
-                    <img class="swiper-slide"
-                        src="https://cdn.pixabay.com/photo/2022/12/09/22/55/trees-7646226_1280.jpg" alt="Swiper">
-                    <img class="swiper-slide"
-                        src="https://cdn.pixabay.com/photo/2019/09/13/11/47/mountains-4473760_1280.jpg" alt="Swiper">
-                </div>
 
-            </div>
+    <div class="logos">
+        <div class="logos-slide">
+            <img src="<?php echo get_template_directory_uri().'/assets/images/logos/3m.svg' ?>" alt="">
+            <img src="<?php echo get_template_directory_uri().'/assets/images/logos/barstool-store.svg' ?>" alt="">
+            <img src="<?php echo get_template_directory_uri().'/assets/images/logos/budweiser.svg' ?>" alt="">
+            <img src="<?php echo get_template_directory_uri().'/assets/images/logos/buzzfeed.svg' ?>" alt="">
+            <img src="<?php echo get_template_directory_uri().'/assets/images/logos/forbes.svg' ?>" alt="">
+            <img src="<?php echo get_template_directory_uri().'/assets/images/logos/macys.svg' ?>" alt="">
+            <img src="<?php echo get_template_directory_uri().'/assets/images/logos/menshealth.svg' ?>" alt="">
+            <img src="<?php echo get_template_directory_uri().'/assets/images/logos/mrbeast.svg' ?>" alt="">
         </div>
-    </section>
-    </main>
+        <div class="logos-slide">
+            <img src="<?php echo get_template_directory_uri().'/assets/images/logos/3m.svg' ?>" alt="">
+            <img src="<?php echo get_template_directory_uri().'/assets/images/logos/barstool-store.svg' ?>" alt="">
+            <img src="<?php echo get_template_directory_uri().'/assets/images/logos/budweiser.svg' ?>" alt="">
+            <img src="<?php echo get_template_directory_uri().'/assets/images/logos/buzzfeed.svg' ?>" alt="">
+            <img src="<?php echo get_template_directory_uri().'/assets/images/logos/forbes.svg' ?>" alt="">
+            <img src="<?php echo get_template_directory_uri().'/assets/images/logos/macys.svg' ?>" alt="">
+            <img src="<?php echo get_template_directory_uri().'/assets/images/logos/menshealth.svg' ?>" alt="">
+            <img src="<?php echo get_template_directory_uri().'/assets/images/logos/mrbeast.svg' ?>" alt="">
+        </div>
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -365,6 +532,8 @@
             </div>
         </div>
     </footer>
+
+
 
 
 

@@ -1,11 +1,56 @@
 var swiper = new Swiper(".hero_swiper", {
   slidesPerView: 3,
-
-  spaceBetween: 30,
+  centeredSlides: true,
+  grabCursor: true,
+  freeMode: false,
   loop: true,
+  mousewheel: false,
+  spaceBetween: 30,
+  keyboard: {
+    enabled: true,
+  },
   pagination: {
     el: ".swiper-pagination",
     clickable: true,
+  },
+  // Responsive breakpoints
+  breakpoints: {
+    640: {
+      slidesPerView: 1.25,
+      spaceBetween: 20,
+    },
+    1024: {
+      slidesPerView: 3,
+      spaceBetween: 20,
+    },
+  },
+});
+
+var swiper = new Swiper(".test", {
+  slidesPerView: 2,
+  // centeredSlides: true,
+  grabCursor: true,
+  freeMode: false,
+  loop: true,
+  mousewheel: false,
+  spaceBetween: 30,
+  keyboard: {
+    enabled: true,
+  },
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+  },
+  // Responsive breakpoints
+  breakpoints: {
+    640: {
+      slidesPerView: 1.25,
+      spaceBetween: 20,
+    },
+    1024: {
+      slidesPerView: 2,
+      spaceBetween: 20,
+    },
   },
 });
 
@@ -105,3 +150,6 @@ new Swiper(".swiper-slider", {
     },
   },
 });
+
+var copy = document.querySelector(".logos-slide").cloneNode(true);
+document.querySelector(".logos").appendChild(copy);
