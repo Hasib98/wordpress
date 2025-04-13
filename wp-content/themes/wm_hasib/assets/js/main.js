@@ -151,5 +151,5 @@ new Swiper(".swiper-slider", {
   },
 });
 
-var copy = document.querySelector(".logos-slide").cloneNode(true);
-document.querySelector(".logos").appendChild(copy);
+/* var copy = document.querySelector(".logos-slide").cloneNode(true);
+document.querySelector(".logos").appendChild(copy); */

@@ -105,7 +105,6 @@
                 <img src="<?php echo get_template_directory_uri(  ).'/assets/images/tent.svg'?>" alt="">
                 <img src="<?php echo get_template_directory_uri(  ).'/assets/images/coople.svg'?>" alt="">
             </div>
-
         </div>
 
     </section>
@@ -221,63 +220,78 @@
 
 
 
-    <section class="section_loop_carousel">
-        <div class="logos-slide">
-            <div class="carousel_content">
-                <div class="bullet"></div>
-                <div class="text">MongoDB</div>
+    <section class="section_language_carousel">
+        <div class="logos">
+            <div class="logos-slide">
+                <div class="single_language">
+                    <div class="bullet"></div>
+                    <div class="text">hasib</div>
+                </div>
+                <div class="single_language">
+                    <div class="bullet"></div>
+                    <div class="text">hasib</div>
+                </div>
+                <div class="single_language">
+                    <div class="bullet"></div>
+                    <div class="text">hasib</div>
+                </div>
+                <div class="single_language">
+                    <div class="bullet"></div>
+                    <div class="text">hasib</div>
+                </div>
+                <div class="single_language">
+                    <div class="bullet"></div>
+                    <div class="text">hasib</div>
+                </div>
+                <div class="single_language">
+                    <div class="bullet"></div>
+                    <div class="text">hasib</div>
+                </div>
+                <div class="single_language">
+                    <div class="bullet"></div>
+                    <div class="text">hasib</div>
+                </div>
+                <div class="single_language">
+                    <div class="bullet"></div>
+                    <div class="text">hasib</div>
+                </div>
             </div>
-            <div class="carousel_content">
-                <div class="bullet"></div>
-                <div class="text">Laravel</div>
-            </div>
-            <div class="carousel_content">
-                <div class="bullet"></div>
-                <div class="text">PHP</div>
-            </div>
-            <div class="carousel_content">
-                <div class="bullet"></div>
-                <div class="text">Wordpress</div>
-            </div>
-            <div class="carousel_content">
-                <div class="bullet"></div>
-                <div class="text">ReactJs</div>
-            </div>
-            <div class="carousel_content">
-                <div class="bullet"></div>
-                <div class="text">Flutter</div>
+            <div class="logos-slide">
+                <div class="single_language">
+                    <div class="bullet"></div>
+                    <div class="text">hasib</div>
+                </div>
+                <div class="single_language">
+                    <div class="bullet"></div>
+                    <div class="text">hasib</div>
+                </div>
+                <div class="single_language">
+                    <div class="bullet"></div>
+                    <div class="text">hasib</div>
+                </div>
+                <div class="single_language">
+                    <div class="bullet"></div>
+                    <div class="text">hasib</div>
+                </div>
+                <div class="single_language">
+                    <div class="bullet"></div>
+                    <div class="text">hasib</div>
+                </div>
+                <div class="single_language">
+                    <div class="bullet"></div>
+                    <div class="text">hasib</div>
+                </div>
+                <div class="single_language">
+                    <div class="bullet"></div>
+                    <div class="text">hasib</div>
+                </div>
+                <div class="single_language">
+                    <div class="bullet"></div>
+                    <div class="text">hasib</div>
+                </div>
             </div>
         </div>
-        <div class="logos-slide">
-            <div class="carousel_content">
-                <div class="bullet"></div>
-                <div class="text">MongoDB</div>
-            </div>
-            <div class="carousel_content">
-                <div class="bullet"></div>
-                <div class="text">Laravel</div>
-            </div>
-            <div class="carousel_content">
-                <div class="bullet"></div>
-                <div class="text">PHP</div>
-            </div>
-            <div class="carousel_content">
-                <div class="bullet"></div>
-                <div class="text">Wordpress</div>
-            </div>
-            <div class="carousel_content">
-                <div class="bullet"></div>
-                <div class="text">ReactJs</div>
-            </div>
-            <div class="carousel_content">
-                <div class="bullet"></div>
-                <div class="text">Flutter</div>
-            </div>
-
-        </div>
-
     </section>
-
 
     <section class="section_testimonial">
         <div class="container">
@@ -387,8 +401,6 @@
     </section>
 
 
-
-
     <section class="section_start_project">
         <div class="container">
             <div class="text_container">
@@ -410,71 +422,6 @@
 
 
     </section>
-
-
-
-
-    <div class="logos">
-        <div class="logos-slide">
-            <img src="<?php echo get_template_directory_uri().'/assets/images/logos/3m.svg' ?>" alt="">
-            <img src="<?php echo get_template_directory_uri().'/assets/images/logos/barstool-store.svg' ?>" alt="">
-            <img src="<?php echo get_template_directory_uri().'/assets/images/logos/budweiser.svg' ?>" alt="">
-            <img src="<?php echo get_template_directory_uri().'/assets/images/logos/buzzfeed.svg' ?>" alt="">
-            <img src="<?php echo get_template_directory_uri().'/assets/images/logos/forbes.svg' ?>" alt="">
-            <img src="<?php echo get_template_directory_uri().'/assets/images/logos/macys.svg' ?>" alt="">
-            <img src="<?php echo get_template_directory_uri().'/assets/images/logos/menshealth.svg' ?>" alt="">
-            <img src="<?php echo get_template_directory_uri().'/assets/images/logos/mrbeast.svg' ?>" alt="">
-        </div>
-        <div class="logos-slide">
-            <img src="<?php echo get_template_directory_uri().'/assets/images/logos/3m.svg' ?>" alt="">
-            <img src="<?php echo get_template_directory_uri().'/assets/images/logos/barstool-store.svg' ?>" alt="">
-            <img src="<?php echo get_template_directory_uri().'/assets/images/logos/budweiser.svg' ?>" alt="">
-            <img src="<?php echo get_template_directory_uri().'/assets/images/logos/buzzfeed.svg' ?>" alt="">
-            <img src="<?php echo get_template_directory_uri().'/assets/images/logos/forbes.svg' ?>" alt="">
-            <img src="<?php echo get_template_directory_uri().'/assets/images/logos/macys.svg' ?>" alt="">
-            <img src="<?php echo get_template_directory_uri().'/assets/images/logos/menshealth.svg' ?>" alt="">
-            <img src="<?php echo get_template_directory_uri().'/assets/images/logos/mrbeast.svg' ?>" alt="">
-        </div>
-
-    </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     <footer>
         <div class="container">
@@ -544,3 +491,34 @@
 </body>
 
 </html>
+
+
+
+<!-- 
+    <div class="logos">
+        <div class="logos-slide">
+            <img src="<?php echo get_template_directory_uri().'/assets/images/logos/3m.svg' ?>" alt="">
+            <img src="<?php echo get_template_directory_uri().'/assets/images/logos/barstool-store.svg' ?>" alt="">
+            <img src="<?php echo get_template_directory_uri().'/assets/images/logos/budweiser.svg' ?>" alt="">
+            <img src="<?php echo get_template_directory_uri().'/assets/images/logos/buzzfeed.svg' ?>" alt="">
+            <img src="<?php echo get_template_directory_uri().'/assets/images/logos/forbes.svg' ?>" alt="">
+            <img src="<?php echo get_template_directory_uri().'/assets/images/logos/macys.svg' ?>" alt="">
+            <img src="<?php echo get_template_directory_uri().'/assets/images/logos/menshealth.svg' ?>" alt="">
+            <img src="<?php echo get_template_directory_uri().'/assets/images/logos/mrbeast.svg' ?>" alt="">
+        </div>
+        <div class="logos-slide">
+            <img src="<?php echo get_template_directory_uri().'/assets/images/logos/3m.svg' ?>" alt="">
+            <img src="<?php echo get_template_directory_uri().'/assets/images/logos/barstool-store.svg' ?>" alt="">
+            <img src="<?php echo get_template_directory_uri().'/assets/images/logos/budweiser.svg' ?>" alt="">
+            <img src="<?php echo get_template_directory_uri().'/assets/images/logos/buzzfeed.svg' ?>" alt="">
+            <img src="<?php echo get_template_directory_uri().'/assets/images/logos/forbes.svg' ?>" alt="">
+            <img src="<?php echo get_template_directory_uri().'/assets/images/logos/macys.svg' ?>" alt="">
+            <img src="<?php echo get_template_directory_uri().'/assets/images/logos/menshealth.svg' ?>" alt="">
+            <img src="<?php echo get_template_directory_uri().'/assets/images/logos/mrbeast.svg' ?>" alt="">
+        </div>
+
+    </div>
+
+
+
+ -->
