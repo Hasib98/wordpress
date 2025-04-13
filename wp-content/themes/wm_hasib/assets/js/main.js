@@ -118,6 +118,12 @@ new Swiper(".swiper-slider", {
   keyboard: {
     enabled: true,
   },
+  onInit: function (swiper) {
+    updateSlideWidths(swiper);
+  },
+  onSlideChangeEnd: function (swiper) {
+    updateSlideWidths(swiper);
+  },
 
   // Enabled autoplay mode
   /*   autoplay: {
@@ -153,3 +159,41 @@ new Swiper(".swiper-slider", {
 
 /* var copy = document.querySelector(".logos-slide").cloneNode(true);
 document.querySelector(".logos").appendChild(copy); */
+function updateSlideWidths(swiper) {
+  // Reset all slides to default width
+  swiper.slides.forEach(function (slide) {
+    slide.classList.remove("active-slide");
+  });
+
+  // Set active slide width
+  swiper.slides[swiper.activeIndex].classList.add("active-slide");
+}
+
+/* const element = document.querySelector(".hero_swiper");
+const swiperWidth = element.clientWidth;
+
+const activeSlideWidth = (swiperWidth - 40) * 0.4;
+const normalSlideWidth = ((swiperWidth - 40) * 0.6) / 2;
+console.log(activeSlideWidth, normalSlideWidth);
+document.querySelector(".swiper-slide-active").style.width = "416px";
+document.querySelector(".swiper-slide").style.width = "312px"; */
+
+// service card line js CSS
+
+const get_section_height = document.querySelector(
+  ".section_our_services"
+).clientHeight;
+
+console.log(get_section_height);
+
+const get_left_line = document.querySelector(".left_line_of_card");
+const get_right_line = document.querySelector(".right_line_of_card");
+
+get_left_line.style.height = `${get_section_height}px`;
+get_right_line.style.height = `${get_section_height}px`;
+
+const get_sec_left_line = document.querySelector(".sec_left_line_of_card");
+const get_sec_right_line = document.querySelector(".sec_right_line_of_card");
+
+get_sec_left_line.style.height = `${get_section_height}px`;
+get_sec_right_line.style.height = `${get_section_height}px`;

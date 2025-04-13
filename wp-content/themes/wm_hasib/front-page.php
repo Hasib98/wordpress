@@ -11,12 +11,15 @@
 <body>
     <header>
         <div class=logo>
-            <img src="<?php echo  get_template_directory_uri(  ).'/assets/images/logo.png' ?>" alt="">
+            <?php echo  the_custom_logo(  ); ?>
         </div>
         <ul class='nav_item inter_display_basic'>
+            <!--<?php wp_nav_menu( array( 'theme_location' => 'header-menu', 
+                'menu_class' => 'nav_item', ) ); ?> -->
             <li>Services</li>
             <li>Contact us</li>
             <li>About us</li>
+
         </ul>
         <button class='get_started_btn poppins'>Get Started</button>
     </header>
@@ -37,6 +40,7 @@
                     <button>Start your project -></button>
                 </div>
             </div>
+
 
 
             <div class="swiper hero_swiper">
@@ -97,8 +101,18 @@
                 <img src="<?php echo get_template_directory_uri(  ).'/assets/images/droboai.svg'?>" alt="">
                 <img src="<?php echo get_template_directory_uri(  ).'/assets/images/tent.svg'?>" alt="">
                 <img src="<?php echo get_template_directory_uri(  ).'/assets/images/coople.svg'?>" alt="">
+                <img src="<?php echo get_template_directory_uri(  ).'/assets/images/cg.svg'?>" alt="">
+                <img src="<?php echo get_template_directory_uri(  ).'/assets/images/byteeat.svg'?>" alt="">
+                <img src="<?php echo get_template_directory_uri(  ).'/assets/images/droboai.svg'?>" alt="">
+                <img src="<?php echo get_template_directory_uri(  ).'/assets/images/tent.svg'?>" alt="">
+                <img src="<?php echo get_template_directory_uri(  ).'/assets/images/coople.svg'?>" alt="">
             </div>
             <div class="logos-slide">
+                <img src="<?php echo get_template_directory_uri(  ).'/assets/images/cg.svg'?>" alt="">
+                <img src="<?php echo get_template_directory_uri(  ).'/assets/images/byteeat.svg'?>" alt="">
+                <img src="<?php echo get_template_directory_uri(  ).'/assets/images/droboai.svg'?>" alt="">
+                <img src="<?php echo get_template_directory_uri(  ).'/assets/images/tent.svg'?>" alt="">
+                <img src="<?php echo get_template_directory_uri(  ).'/assets/images/coople.svg'?>" alt="">
                 <img src="<?php echo get_template_directory_uri(  ).'/assets/images/cg.svg'?>" alt="">
                 <img src="<?php echo get_template_directory_uri(  ).'/assets/images/byteeat.svg'?>" alt="">
                 <img src="<?php echo get_template_directory_uri(  ).'/assets/images/droboai.svg'?>" alt="">
@@ -151,12 +165,16 @@
                 <p>Webermelon is a Website and Software Development Company. We help startups and businesses set up
                     remote teams and build their SaaS, PaaS, apps, and websites.</p>
                 <img src="<?php echo get_template_directory_uri(  ).'/assets/images/ezway.jpeg'?>" alt="">
+                <div class="left_line_of_card"></div>
+                <div class="right_line_of_card"></div>
             </div>
             <div class="service_card">
                 <h1>Web & Mobile Apps Development</h1>
                 <p>Webermelon is a Website and Software Development Company. We help startups and businesses set up
                     remote teams and build their SaaS, PaaS, apps, and websites.</p>
                 <img src="<?php echo get_template_directory_uri(  ).'/assets/images/adsketcher.jpeg'?>" alt="">
+                <div class="sec_left_line_of_card"></div>
+                <div class="sec_right_line_of_card"></div>
             </div>
 
         </div>
@@ -225,69 +243,149 @@
             <div class="logos-slide">
                 <div class="single_language">
                     <div class="bullet"></div>
-                    <div class="text">hasib</div>
+                    <div class="text">PHP</div>
                 </div>
                 <div class="single_language">
                     <div class="bullet"></div>
-                    <div class="text">hasib</div>
+                    <div class="text">Laravel</div>
                 </div>
                 <div class="single_language">
                     <div class="bullet"></div>
-                    <div class="text">hasib</div>
+                    <div class="text">WordPress</div>
                 </div>
                 <div class="single_language">
                     <div class="bullet"></div>
-                    <div class="text">hasib</div>
+                    <div class="text">Flutter</div>
                 </div>
                 <div class="single_language">
                     <div class="bullet"></div>
-                    <div class="text">hasib</div>
+                    <div class="text">MongoDB</div>
                 </div>
                 <div class="single_language">
                     <div class="bullet"></div>
-                    <div class="text">hasib</div>
+                    <div class="text">Bootstrap</div>
                 </div>
                 <div class="single_language">
                     <div class="bullet"></div>
-                    <div class="text">hasib</div>
+                    <div class="text">AWS</div>
                 </div>
                 <div class="single_language">
                     <div class="bullet"></div>
-                    <div class="text">hasib</div>
+                    <div class="text">JS</div>
+                </div>
+                <div class="single_language">
+                    <div class="bullet"></div>
+                    <div class="text">MySQL</div>
+                </div>
+                <div class="single_language">
+                    <div class="bullet"></div>
+                    <div class="text">PHP</div>
+                </div>
+                <div class="single_language">
+                    <div class="bullet"></div>
+                    <div class="text">Laravel</div>
+                </div>
+                <div class="single_language">
+                    <div class="bullet"></div>
+                    <div class="text">WordPress</div>
+                </div>
+                <div class="single_language">
+                    <div class="bullet"></div>
+                    <div class="text">Flutter</div>
+                </div>
+                <div class="single_language">
+                    <div class="bullet"></div>
+                    <div class="text">MongoDB</div>
+                </div>
+                <div class="single_language">
+                    <div class="bullet"></div>
+                    <div class="text">Bootstrap</div>
+                </div>
+                <div class="single_language">
+                    <div class="bullet"></div>
+                    <div class="text">AWS</div>
+                </div>
+                <div class="single_language">
+                    <div class="bullet"></div>
+                    <div class="text">JS</div>
+                </div>
+                <div class="single_language">
+                    <div class="bullet"></div>
+                    <div class="text">MySQL</div>
                 </div>
             </div>
             <div class="logos-slide">
                 <div class="single_language">
                     <div class="bullet"></div>
-                    <div class="text">hasib</div>
+                    <div class="text">PHP</div>
                 </div>
                 <div class="single_language">
                     <div class="bullet"></div>
-                    <div class="text">hasib</div>
+                    <div class="text">Laravel</div>
                 </div>
                 <div class="single_language">
                     <div class="bullet"></div>
-                    <div class="text">hasib</div>
+                    <div class="text">WordPress</div>
                 </div>
                 <div class="single_language">
                     <div class="bullet"></div>
-                    <div class="text">hasib</div>
+                    <div class="text">Flutter</div>
                 </div>
                 <div class="single_language">
                     <div class="bullet"></div>
-                    <div class="text">hasib</div>
+                    <div class="text">MongoDB</div>
                 </div>
                 <div class="single_language">
                     <div class="bullet"></div>
-                    <div class="text">hasib</div>
+                    <div class="text">Bootstrap</div>
                 </div>
                 <div class="single_language">
                     <div class="bullet"></div>
-                    <div class="text">hasib</div>
+                    <div class="text">AWS</div>
                 </div>
                 <div class="single_language">
                     <div class="bullet"></div>
-                    <div class="text">hasib</div>
+                    <div class="text">JS</div>
+                </div>
+                <div class="single_language">
+                    <div class="bullet"></div>
+                    <div class="text">MySQL</div>
+                </div>
+                <div class="single_language">
+                    <div class="bullet"></div>
+                    <div class="text">PHP</div>
+                </div>
+                <div class="single_language">
+                    <div class="bullet"></div>
+                    <div class="text">Laravel</div>
+                </div>
+                <div class="single_language">
+                    <div class="bullet"></div>
+                    <div class="text">WordPress</div>
+                </div>
+                <div class="single_language">
+                    <div class="bullet"></div>
+                    <div class="text">Flutter</div>
+                </div>
+                <div class="single_language">
+                    <div class="bullet"></div>
+                    <div class="text">MongoDB</div>
+                </div>
+                <div class="single_language">
+                    <div class="bullet"></div>
+                    <div class="text">Bootstrap</div>
+                </div>
+                <div class="single_language">
+                    <div class="bullet"></div>
+                    <div class="text">AWS</div>
+                </div>
+                <div class="single_language">
+                    <div class="bullet"></div>
+                    <div class="text">JS</div>
+                </div>
+                <div class="single_language">
+                    <div class="bullet"></div>
+                    <div class="text">MySQL</div>
                 </div>
             </div>
         </div>
@@ -464,21 +562,29 @@
                 </div>
 
             </div>
-            <div class="texture_container">
-                <div class="rectangle"></div>
-                <div class="curvy">
-                    <div class="top_rectangle"></div>
-                    <div class="bottom_rectangle"></div>
-                </div>
-                <div class="rectangle"></div>
-                <div class="curvy">
-                    <div class="top_rectangle"></div>
-                    <div class="bottom_rectangle"></div>
-                </div>
 
-            </div>
+
+            <!--  <div class="texture_container">
+                <div class="rectangle"></div>
+                <div class="curvy">
+                    <div class="top_rectangle"></div>
+                    <div class="bottom_rectangle"></div>
+                </div>
+                <div class="rectangle"></div>
+                <div class="curvy">
+                    <div class="top_rectangle"></div>
+                    <div class="bottom_rectangle"></div>
+                </div>
+            </div> -->
         </div>
+
     </footer>
+
+    <!--     <footer>
+        <div class="container">
+            h1
+        </div>
+    </footer> -->
 
 
 
@@ -491,34 +597,3 @@
 </body>
 
 </html>
-
-
-
-<!-- 
-    <div class="logos">
-        <div class="logos-slide">
-            <img src="<?php echo get_template_directory_uri().'/assets/images/logos/3m.svg' ?>" alt="">
-            <img src="<?php echo get_template_directory_uri().'/assets/images/logos/barstool-store.svg' ?>" alt="">
-            <img src="<?php echo get_template_directory_uri().'/assets/images/logos/budweiser.svg' ?>" alt="">
-            <img src="<?php echo get_template_directory_uri().'/assets/images/logos/buzzfeed.svg' ?>" alt="">
-            <img src="<?php echo get_template_directory_uri().'/assets/images/logos/forbes.svg' ?>" alt="">
-            <img src="<?php echo get_template_directory_uri().'/assets/images/logos/macys.svg' ?>" alt="">
-            <img src="<?php echo get_template_directory_uri().'/assets/images/logos/menshealth.svg' ?>" alt="">
-            <img src="<?php echo get_template_directory_uri().'/assets/images/logos/mrbeast.svg' ?>" alt="">
-        </div>
-        <div class="logos-slide">
-            <img src="<?php echo get_template_directory_uri().'/assets/images/logos/3m.svg' ?>" alt="">
-            <img src="<?php echo get_template_directory_uri().'/assets/images/logos/barstool-store.svg' ?>" alt="">
-            <img src="<?php echo get_template_directory_uri().'/assets/images/logos/budweiser.svg' ?>" alt="">
-            <img src="<?php echo get_template_directory_uri().'/assets/images/logos/buzzfeed.svg' ?>" alt="">
-            <img src="<?php echo get_template_directory_uri().'/assets/images/logos/forbes.svg' ?>" alt="">
-            <img src="<?php echo get_template_directory_uri().'/assets/images/logos/macys.svg' ?>" alt="">
-            <img src="<?php echo get_template_directory_uri().'/assets/images/logos/menshealth.svg' ?>" alt="">
-            <img src="<?php echo get_template_directory_uri().'/assets/images/logos/mrbeast.svg' ?>" alt="">
-        </div>
-
-    </div>
-
-
-
- -->
