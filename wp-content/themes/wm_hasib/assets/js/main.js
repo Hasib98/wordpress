@@ -15,12 +15,17 @@ var swiper = new Swiper(".hero_swiper", {
   },
   // Responsive breakpoints
   breakpoints: {
-    640: {
-      slidesPerView: 1.25,
-      spaceBetween: 20,
-    },
     1024: {
       slidesPerView: 3,
+      spaceBetween: 20,
+    },
+    768: {
+      slidesPerView: 2,
+      spaceBetween: 20,
+      centeredSlides: false,
+    },
+    300: {
+      slidesPerView: 1,
       spaceBetween: 20,
     },
   },
@@ -49,6 +54,10 @@ var swiper = new Swiper(".test", {
     },
     1024: {
       slidesPerView: 2,
+      spaceBetween: 20,
+    },
+    300: {
+      slidesPerView: 1,
       spaceBetween: 20,
     },
   },

@@ -9,20 +9,25 @@
 </head>
 
 <body>
-    <header>
-        <div class=logo>
-            <?php echo  the_custom_logo(  ); ?>
-        </div>
-        <ul class='nav_item inter_display_basic'>
-            <!--<?php wp_nav_menu( array( 'theme_location' => 'header-menu', 
-                'menu_class' => 'nav_item', ) ); ?> -->
-            <li>Services</li>
-            <li>Contact us</li>
-            <li>About us</li>
 
-        </ul>
-        <button class='get_started_btn poppins'>Get Started</button>
+
+
+
+    <header>
+        <div class="container">
+            <div class=logo>
+                <img src="<?php echo get_template_directory_uri().'/assets/images/logo.png'   ?>" alt="">
+            </div>
+            <ul class='nav_item inter_display_basic'>
+                <li>Services</li>
+                <li>Contact us</li>
+                <li>About us</li>
+            </ul>
+            <button class='get_started_btn poppins'>Get Started</button>
+        </div>
     </header>
+
+
 
 
 
@@ -65,7 +70,6 @@
 
     </section>
 
-
     <section class="section_ceo">
         <div class="counter">
             <div class="count">
@@ -91,7 +95,7 @@
             <div class="quote">“This is the best place to get your <span>website, software or mobile apps developed. Or
                     hiring skilled developers</span> as a team or individual.” </div>
         </div>
-        <img src="<?php echo get_template_directory_uri(  ).'/assets/images/quotes.svg'?>  " alt="">
+        <img class="quote_icon" src="<?php echo get_template_directory_uri(  ).'/assets/images/quotes.svg'?>  " alt="">
         <div class="ceo_name">Tanjil Ahmed Fahim</div>
         <p class="ceo_position">CEO - Webermelon</p>
         <div class="logos">
@@ -122,6 +126,9 @@
         </div>
 
     </section>
+
+
+
 
     <section class="section_our_services">
         <div class="container">
@@ -168,6 +175,7 @@
                 <div class="left_line_of_card"></div>
                 <div class="right_line_of_card"></div>
             </div>
+
             <div class="service_card">
                 <h1>Web & Mobile Apps Development</h1>
                 <p>Webermelon is a Website and Software Development Company. We help startups and businesses set up
@@ -181,7 +189,9 @@
     </section>
 
 
-    <section class='section_case_studies'>
+
+
+    <!--  <section class='section_case_studies'>
         <div class="container">
             <h1 class="section_head">Case Studies</h1>
             <p class="section_description">From designs to marketing, Webermelon serves all digital services
@@ -231,10 +241,8 @@
                     </div>
                 </div>
             </div>
-
-
         </div>
-    </section>
+    </section> -->
 
 
 
@@ -391,6 +399,8 @@
         </div>
     </section>
 
+
+
     <section class="section_testimonial">
         <div class="container">
             <h1 class="section_head">Testimonial</h1>
@@ -498,7 +508,7 @@
 
     </section>
 
-
+    <!-- 
     <section class="section_start_project">
         <div class="container">
             <div class="text_container">
@@ -562,23 +572,21 @@
                 </div>
 
             </div>
-
-
-            <!--  <div class="texture_container">
-                <div class="rectangle"></div>
-                <div class="curvy">
-                    <div class="top_rectangle"></div>
-                    <div class="bottom_rectangle"></div>
-                </div>
-                <div class="rectangle"></div>
-                <div class="curvy">
-                    <div class="top_rectangle"></div>
-                    <div class="bottom_rectangle"></div>
-                </div>
-            </div> -->
         </div>
-
+        <div class="texture_container">
+            <div class="rectangle"></div>
+            <div class="curvy">
+                <div class="top_rectangle"></div>
+                <div class="bottom_rectangle"></div>
+            </div>
+            <div class="rectangle"></div>
+            <div class="curvy">
+                <div class="top_rectangle"></div>
+                <div class="bottom_rectangle"></div>
+            </div>
+        </div>
     </footer>
+ -->
 
     <!--     <footer>
         <div class="container">
