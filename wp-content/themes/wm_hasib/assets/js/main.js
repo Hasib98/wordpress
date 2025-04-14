@@ -49,7 +49,7 @@ var swiper = new Swiper(".test", {
   // Responsive breakpoints
   breakpoints: {
     640: {
-      slidesPerView: 1.25,
+      slidesPerView: 1,
       spaceBetween: 20,
     },
     1024: {
@@ -206,3 +206,10 @@ const get_sec_right_line = document.querySelector(".sec_right_line_of_card");
 
 get_sec_left_line.style.height = `${get_section_height}px`;
 get_sec_right_line.style.height = `${get_section_height}px`;
+
+const hamburger = document.getElementById("hamburger");
+const navLinks = document.getElementById("navLinks");
+
+hamburger.addEventListener("click", () => {
+  navLinks.classList.toggle("active");
+});

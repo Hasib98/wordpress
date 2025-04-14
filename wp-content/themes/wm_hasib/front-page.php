@@ -18,7 +18,10 @@
             <div class=logo>
                 <img src="<?php echo get_template_directory_uri().'/assets/images/logo.png'   ?>" alt="">
             </div>
-            <ul class='nav_item inter_display_basic'>
+            <div class="hamburger" id="hamburger">
+                &#9776;
+            </div>
+            <ul class='nav_item inter_display_basic' id="navLinks">
                 <li>Services</li>
                 <li>Contact us</li>
                 <li>About us</li>
@@ -129,7 +132,7 @@
 
 
 
-
+    <!-- 
     <section class="section_our_services">
         <div class="container">
             <div class="service_details">
@@ -186,63 +189,73 @@
             </div>
 
         </div>
-    </section>
+    </section> -->
 
 
-
-
-    <!--  <section class='section_case_studies'>
+    <!--  <div class="case_card">
+        <img src="<?php echo get_template_directory_uri(  ).'/assets/images/case_1.png'?>" alt="">
+        <div class="chips">
+            <div class="chip">Website</div>
+            <div class="chip">Wordpress</div>
+        </div>
+        <h1>Web Application Development</h1>
+    </div>
+ -->
+    <section class='section_case_studies'>
         <div class="container">
             <h1 class="section_head">Case Studies</h1>
             <p class="section_description">From designs to marketing, Webermelon serves all digital services
                 your business needs to start and be succeeded</p>
 
-            <div class="container">
-                <div class="row">
-                    <div class="col">
-                        <div class="case_card">
-                            <img src="<?php echo get_template_directory_uri(  ).'/assets/images/case_1.png'?>" alt="">
-                            <div class="chips">
-                                <div class="chip">Website</div>
-                                <div class="chip">Wordpress</div>
-                            </div>
-                            <h1>Web Application Development</h1>
+            <!-- <div class="container"> -->
+            <div class="row">
+                <div class="col-12 col-lg-6 mb-4">
+                    <div class="card case_card">
+                        <img src="<?php echo get_template_directory_uri(  ).'/assets/images/case_1.png'?>" alt="">
+                        <div class="chips">
+                            <div class="chip">Website</div>
+                            <div class="chip">Wordpress</div>
                         </div>
+                        <h1>Web Application Development</h1>
                     </div>
-                    <div class="col">
-                        <div class="case_card">
-                            <img src="<?php echo get_template_directory_uri(  ).'/assets/images/case_2.png'?>" alt="">
-                            <div class="chips">
-                                <div class="chip">Website</div>
-                                <div class="chip">Wordpress</div>
-                            </div>
-                            <h1>Web Application Development</h1>
+                </div>
+
+                <div class="col-12 col-lg-6 mb-4">
+                    <div class="card case_card">
+                        <img src="<?php echo get_template_directory_uri(  ).'/assets/images/case_1.png'?>" alt="">
+                        <div class="chips">
+                            <div class="chip">Website</div>
+                            <div class="chip">Wordpress</div>
                         </div>
+                        <h1>Web Application Development</h1>
                     </div>
-                    <div class="col">
-                        <div class="case_card">
-                            <img src="<?php echo get_template_directory_uri(  ).'/assets/images/case_2.png'?>" alt="">
-                            <div class="chips">
-                                <div class="chip">Website</div>
-                                <div class="chip">Wordpress</div>
-                            </div>
-                            <h1>Web Application Development</h1>
+                </div>
+
+                <div class="col-12 col-lg-6 mb-4">
+                    <div class="card case_card">
+                        <img src="<?php echo get_template_directory_uri(  ).'/assets/images/case_1.png'?>" alt="">
+                        <div class="chips">
+                            <div class="chip">Website</div>
+                            <div class="chip">Wordpress</div>
                         </div>
+                        <h1>Web Application Development</h1>
                     </div>
-                    <div class="col">
-                        <div class="case_card">
-                            <img src="<?php echo get_template_directory_uri(  ).'/assets/images/case_1.png'?>" alt="">
-                            <div class="chips">
-                                <div class="chip">Website</div>
-                                <div class="chip">Wordpress</div>
-                            </div>
-                            <h1>Web Application Development</h1>
+                </div>
+
+                <div class="col-12 col-lg-6 mb-4">
+                    <div class="card case_card">
+                        <img src="<?php echo get_template_directory_uri(  ).'/assets/images/case_1.png'?>" alt="">
+                        <div class="chips">
+                            <div class="chip">Website</div>
+                            <div class="chip">Wordpress</div>
                         </div>
+                        <h1>Web Application Development</h1>
                     </div>
                 </div>
             </div>
+            <!-- </div> -->
         </div>
-    </section> -->
+    </section>
 
 
 
@@ -508,14 +521,15 @@
 
     </section>
 
-    <!-- 
+
     <section class="section_start_project">
         <div class="container">
             <div class="text_container">
-                <h1>Accelerate Your Software Development Potential with Us</h1>
-                <p>With our innovative solutions and dedicated expertise, success is a guaranteed outcome. Let's
+                <h1 class="heading_text">Accelerate Your Software Development Potential with Us</h1>
+                <p class="description">With our innovative solutions and dedicated expertise, success is a guaranteed
+                    outcome. Let's
                     accelerate together towards your goals and beyond.</p>
-                <button>Start your project -></button>
+                <button class="start_project_btn">Start your project -></button>
             </div>
             <div class="image_wrapper">
                 <img src=" <?php echo get_template_directory_uri(  ).'/assets/images/img_right.png'?> " alt="">
@@ -530,8 +544,19 @@
 
 
     </section>
-
     <footer>
+        <div class="texture_container">
+            <div class="rectangle"></div>
+            <div class="curvy">
+                <div class="top_rectangle"></div>
+                <div class="bottom_rectangle"></div>
+            </div>
+            <div class="rectangle"></div>
+            <div class="curvy">
+                <div class="top_rectangle"></div>
+                <div class="bottom_rectangle"></div>
+            </div>
+        </div>
         <div class="container">
             <div class="text_container">
                 <p class=" start_text">Let’s get start</p>
@@ -545,12 +570,14 @@
                                 <p class="description">25108 Marguerite Pkwy Suite A-236 Mission Viejo Ca 92692</p>
                             </li>
                             <li>
-                                <p class="title">USA Address:</p>
-                                <p class="description">25108 Marguerite Pkwy Suite A-236 Mission Viejo Ca 92692</p>
+                                <p class="title">UK Address:</p>
+                                <p class="description">Webermelon Limited 71-75 Shelton Street, Covent Garden London
+                                </p>
                             </li>
                             <li>
-                                <p class="title">USA Address:</p>
-                                <p class="description">25108 Marguerite Pkwy Suite A-236 Mission Viejo Ca 92692</p>
+                                <p class="title">Bangladesh Address:</p>
+                                <p class="description">Webermelon, 51/A, TahRub Tower, 3 Jakir Hussain Road, South
+                                    Khulshi,  Chittagong</p>
                             </li>
 
                     </div>
@@ -572,31 +599,10 @@
                 </div>
 
             </div>
+            <div class="copyright">© 2024 webermelon. All Rights Reserved</div>
         </div>
-        <div class="texture_container">
-            <div class="rectangle"></div>
-            <div class="curvy">
-                <div class="top_rectangle"></div>
-                <div class="bottom_rectangle"></div>
-            </div>
-            <div class="rectangle"></div>
-            <div class="curvy">
-                <div class="top_rectangle"></div>
-                <div class="bottom_rectangle"></div>
-            </div>
-        </div>
+
     </footer>
- -->
-
-    <!--     <footer>
-        <div class="container">
-            h1
-        </div>
-    </footer> -->
-
-
-
-
 
 
 
