@@ -132,7 +132,7 @@
 
 
 
-    <!-- 
+
     <section class="section_our_services">
         <div class="container">
             <div class="service_details">
@@ -189,7 +189,7 @@
             </div>
 
         </div>
-    </section> -->
+    </section>
 
 
     <!--  <div class="case_card">
@@ -207,53 +207,53 @@
             <p class="section_description">From designs to marketing, Webermelon serves all digital services
                 your business needs to start and be succeeded</p>
 
-            <!-- <div class="container"> -->
-            <div class="row">
-                <div class="col-12 col-lg-6 mb-4">
-                    <div class="card case_card">
-                        <img src="<?php echo get_template_directory_uri(  ).'/assets/images/case_1.png'?>" alt="">
-                        <div class="chips">
-                            <div class="chip">Website</div>
-                            <div class="chip">Wordpress</div>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12 col-lg-6 mb-4">
+                        <div class="card case_card">
+                            <img src="<?php echo get_template_directory_uri(  ).'/assets/images/case_1.png'?>" alt="">
+                            <div class="chips">
+                                <div class="chip">Website</div>
+                                <div class="chip">Wordpress</div>
+                            </div>
+                            <h1>Web Application Development</h1>
                         </div>
-                        <h1>Web Application Development</h1>
                     </div>
-                </div>
 
-                <div class="col-12 col-lg-6 mb-4">
-                    <div class="card case_card">
-                        <img src="<?php echo get_template_directory_uri(  ).'/assets/images/case_1.png'?>" alt="">
-                        <div class="chips">
-                            <div class="chip">Website</div>
-                            <div class="chip">Wordpress</div>
+                    <div class="col-12 col-lg-6 mb-4">
+                        <div class="card case_card">
+                            <img src="<?php echo get_template_directory_uri(  ).'/assets/images/case_1.png'?>" alt="">
+                            <div class="chips">
+                                <div class="chip">Website</div>
+                                <div class="chip">Wordpress</div>
+                            </div>
+                            <h1>Web Application Development</h1>
                         </div>
-                        <h1>Web Application Development</h1>
                     </div>
-                </div>
 
-                <div class="col-12 col-lg-6 mb-4">
-                    <div class="card case_card">
-                        <img src="<?php echo get_template_directory_uri(  ).'/assets/images/case_1.png'?>" alt="">
-                        <div class="chips">
-                            <div class="chip">Website</div>
-                            <div class="chip">Wordpress</div>
+                    <div class="col-12 col-lg-6 mb-4">
+                        <div class="card case_card">
+                            <img src="<?php echo get_template_directory_uri(  ).'/assets/images/case_1.png'?>" alt="">
+                            <div class="chips">
+                                <div class="chip">Website</div>
+                                <div class="chip">Wordpress</div>
+                            </div>
+                            <h1>Web Application Development</h1>
                         </div>
-                        <h1>Web Application Development</h1>
                     </div>
-                </div>
 
-                <div class="col-12 col-lg-6 mb-4">
-                    <div class="card case_card">
-                        <img src="<?php echo get_template_directory_uri(  ).'/assets/images/case_1.png'?>" alt="">
-                        <div class="chips">
-                            <div class="chip">Website</div>
-                            <div class="chip">Wordpress</div>
+                    <div class="col-12 col-lg-6 mb-4">
+                        <div class="card case_card">
+                            <img src="<?php echo get_template_directory_uri(  ).'/assets/images/case_1.png'?>" alt="">
+                            <div class="chips">
+                                <div class="chip">Website</div>
+                                <div class="chip">Wordpress</div>
+                            </div>
+                            <h1>Web Application Development</h1>
                         </div>
-                        <h1>Web Application Development</h1>
                     </div>
                 </div>
             </div>
-            <!-- </div> -->
         </div>
     </section>
 
