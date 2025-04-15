@@ -193,7 +193,7 @@ const get_section_height = document.querySelector(
   ".section_our_services"
 ).clientHeight;
 
-console.log(get_section_height);
+// console.log(get_section_height);
 
 const get_left_line = document.querySelector(".left_line_of_card");
 const get_right_line = document.querySelector(".right_line_of_card");
@@ -214,3 +214,46 @@ hamburger.addEventListener("click", () => {
   // alert("test");
   navLinks.classList.toggle("active");
 });
+
+const get_hero_section_height =
+  document.querySelector(".section_hero").clientHeight;
+
+const line_1 = document.querySelector(".line_1");
+const line_2 = document.querySelector(".line_2");
+const line_3 = document.querySelector(".line_3");
+const line_4 = document.querySelector(".line_4");
+const line_5 = document.querySelector(".line_5");
+const line_6 = document.querySelector(".line_6");
+
+line_1.style.height = `${get_hero_section_height}px`;
+line_2.style.height = `${get_hero_section_height}px`;
+line_3.style.height = `${get_hero_section_height}px`;
+line_4.style.height = `${get_hero_section_height}px`;
+line_5.style.height = `${get_hero_section_height}px`;
+line_6.style.height = `${get_hero_section_height}px`;
+
+const slide_prev = document
+  .querySelector(".swiper-slide-prev")
+  .getBoundingClientRect();
+const slide_active = document
+  .querySelector(".swiper-slide-active")
+  .getBoundingClientRect();
+const slide_next = document
+  .querySelector(".swiper-slide-next")
+  .getBoundingClientRect();
+
+/* 
+console.log("Top:", slide_prev.top);
+console.log("Left:", slide_prev.left);
+console.log("Bottom:", slide_prev.bottom);
+console.log("Right:", slide_prev.right);
+*/
+
+line_1.style.left = `${slide_prev.left}px`;
+line_2.style.left = `${slide_prev.right}px`;
+
+line_3.style.left = `${slide_active.left}px`;
+line_4.style.left = `${slide_active.right}px`;
+
+line_5.style.left = `${slide_next.left}px`;
+line_6.style.left = `${slide_next.right}px`;

@@ -50,8 +50,8 @@
             </div>
 
 
-
             <div class="swiper hero_swiper">
+                <div class="hero_swiper_top_line"></div>
                 <div class="swiper-wrapper">
                     <img class="swiper-slide"
                         src="<?php echo get_template_directory_uri(  ).'/assets/images/img_left.png'?> " alt="Swiper">
@@ -66,9 +66,15 @@
                     <img class="swiper-slide"
                         src="<?php echo get_template_directory_uri(  ).'/assets/images/img_right.png'?> " alt="Swiper">
                 </div>
+                <div class="hero_swiper_bottom_line"></div>
             </div>
-
         </div>
+        <div class="hero_grid line_1"></div>
+        <div class="hero_grid line_2"></div>
+        <div class="hero_grid line_3"></div>
+        <div class="hero_grid line_4"></div>
+        <div class="hero_grid line_5"></div>
+        <div class="hero_grid line_6"></div>
 
 
     </section>
@@ -210,7 +216,7 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-12 col-lg-6 mb-4">
-                        <div class="card case_card">
+                        <div class=" case_card">
                             <img src="<?php echo get_template_directory_uri(  ).'/assets/images/case_1.png'?>" alt="">
                             <div class="chips">
                                 <div class="chip">Website</div>
@@ -221,7 +227,7 @@
                     </div>
 
                     <div class="col-12 col-lg-6 mb-4">
-                        <div class="card case_card">
+                        <div class=" case_card">
                             <img src="<?php echo get_template_directory_uri(  ).'/assets/images/case_1.png'?>" alt="">
                             <div class="chips">
                                 <div class="chip">Website</div>
@@ -232,7 +238,7 @@
                     </div>
 
                     <div class="col-12 col-lg-6 mb-4">
-                        <div class="card case_card">
+                        <div class=" case_card">
                             <img src="<?php echo get_template_directory_uri(  ).'/assets/images/case_1.png'?>" alt="">
                             <div class="chips">
                                 <div class="chip">Website</div>
@@ -243,7 +249,7 @@
                     </div>
 
                     <div class="col-12 col-lg-6 mb-4">
-                        <div class="card case_card">
+                        <div class=" case_card">
                             <img src="<?php echo get_template_directory_uri(  ).'/assets/images/case_1.png'?>" alt="">
                             <div class="chips">
                                 <div class="chip">Website</div>
@@ -545,18 +551,7 @@
 
     </section>
     <footer>
-        <div class="texture_container">
-            <div class="rectangle"></div>
-            <div class="curvy">
-                <div class="top_rectangle"></div>
-                <div class="bottom_rectangle"></div>
-            </div>
-            <div class="rectangle"></div>
-            <div class="curvy">
-                <div class="top_rectangle"></div>
-                <div class="bottom_rectangle"></div>
-            </div>
-        </div>
+
         <div class="container">
             <div class="text_container">
                 <p class=" start_text">Let’s get start</p>
@@ -597,11 +592,21 @@
 
                     </div>
                 </div>
-
             </div>
-            <div class="copyright">© 2024 webermelon. All Rights Reserved</div>
+            <div class="texture_container">
+                <div class="rectangle"></div>
+                <div class="curvy">
+                    <div class="top_rectangle"></div>
+                    <div class="bottom_rectangle"></div>
+                </div>
+                <div class="rectangle"></div>
+                <div class="curvy">
+                    <div class="top_rectangle"></div>
+                    <div class="bottom_rectangle"></div>
+                </div>
+            </div>
+            <!-- <div class="copyright">© 2024 webermelon. All Rights Reserved</div> -->
         </div>
-
     </footer>
 
 
