@@ -10,9 +10,6 @@
 
 <body>
 
-
-
-
     <header>
         <div class="container">
             <div class=logo>
@@ -31,9 +28,6 @@
     </header>
 
 
-
-
-
     <section class="section_hero gradient_background">
         <div class="container">
             <div class="hero_contents">
@@ -48,7 +42,6 @@
                     <button>Start your project -></button>
                 </div>
             </div>
-
 
             <div class="swiper hero_swiper">
                 <div class="hero_swiper_top_line"></div>
@@ -68,13 +61,16 @@
                 </div>
                 <div class="hero_swiper_bottom_line"></div>
             </div>
+
+
+            <div class="hero_grid line_1"></div>
+            <div class="hero_grid line_2"></div>
+            <div class="hero_grid line_3"></div>
+            <div class="hero_grid line_4"></div>
+            <div class="hero_grid line_5"></div>
+            <div class="hero_grid line_6"></div>
         </div>
-        <div class="hero_grid line_1"></div>
-        <div class="hero_grid line_2"></div>
-        <div class="hero_grid line_3"></div>
-        <div class="hero_grid line_4"></div>
-        <div class="hero_grid line_5"></div>
-        <div class="hero_grid line_6"></div>
+
 
 
     </section>
@@ -198,15 +194,7 @@
     </section>
 
 
-    <!--  <div class="case_card">
-        <img src="<?php echo get_template_directory_uri(  ).'/assets/images/case_1.png'?>" alt="">
-        <div class="chips">
-            <div class="chip">Website</div>
-            <div class="chip">Wordpress</div>
-        </div>
-        <h1>Web Application Development</h1>
-    </div>
- -->
+
     <section class='section_case_studies'>
         <div class="container">
             <h1 class="section_head">Case Studies</h1>
@@ -540,20 +528,35 @@
             <div class="image_wrapper">
                 <img src=" <?php echo get_template_directory_uri(  ).'/assets/images/img_right.png'?> " alt="">
             </div>
-
             <div class="left_line"></div>
             <div class="top_line"></div>
             <div class="bottom_line"></div>
             <div class="right_line"></div>
-
         </div>
 
 
     </section>
+
+
     <footer>
 
+        <div class="footer_container">
+            <div class="texture_container">
+                <div class="rectangle"></div>
+                <div class="curvy">
+                    <div class="top_rectangle"></div>
+                    <div class="bottom_rectangle"></div>
+                </div>
+                <div class="rectangle"></div>
+                <div class="curvy">
+                    <div class="top_rectangle"></div>
+                    <div class="bottom_rectangle"></div>
+                </div>
+            </div>
+        </div>
+
         <div class="container">
-            <div class="text_container">
+            <div class="footer_text_container">
                 <p class=" start_text">Let’s get start</p>
                 <h1><span>hi@</span>webermelon.com
                 </h1>
@@ -593,20 +596,8 @@
                     </div>
                 </div>
             </div>
-            <div class="texture_container">
-                <div class="rectangle"></div>
-                <div class="curvy">
-                    <div class="top_rectangle"></div>
-                    <div class="bottom_rectangle"></div>
-                </div>
-                <div class="rectangle"></div>
-                <div class="curvy">
-                    <div class="top_rectangle"></div>
-                    <div class="bottom_rectangle"></div>
-                </div>
-            </div>
-            <!-- <div class="copyright">© 2024 webermelon. All Rights Reserved</div> -->
         </div>
+
     </footer>
 
 
@@ -616,3 +607,5 @@
 </body>
 
 </html>
+
+<!-- <div class="copyright">© 2024 webermelon. All Rights Reserved</div> -->

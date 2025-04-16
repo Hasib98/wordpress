@@ -249,11 +249,11 @@ console.log("Bottom:", slide_prev.bottom);
 console.log("Right:", slide_prev.right);
 */
 
-line_1.style.left = `${slide_prev.left}px`;
-line_2.style.left = `${slide_prev.right}px`;
+// line_1.style.left = `${slide_prev.left}px`;
+// line_2.style.left = `${slide_prev.right}px`;
 
-line_3.style.left = `${slide_active.left}px`;
-line_4.style.left = `${slide_active.right}px`;
+// line_3.style.left = `${slide_active.left}px`;
+// line_4.style.left = `${slide_active.right}px`;
 
-line_5.style.left = `${slide_next.left}px`;
-line_6.style.left = `${slide_next.right}px`;
+// line_5.style.left = `${slide_next.left}px`;
+// line_6.style.left = `${slide_next.right}px`;
