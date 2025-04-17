@@ -553,7 +553,15 @@
                     <div class="bottom_rectangle"></div>
                 </div>
             </div>
+            <div class="grid_top_line"></div>
+            <div class="grid_bottom_line"></div>
         </div>
+        <div class="left_grid_line_1"></div>
+        <div class="right_grid_line_1"></div>
+        <div class="left_grid_line_2"></div>
+        <div class="right_grid_line_2"></div>
+
+
 
         <div class="container">
             <div class="footer_text_container">
